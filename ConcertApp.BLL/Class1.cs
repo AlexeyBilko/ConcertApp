@@ -8,5 +8,6 @@ namespace ConcertApp.BLL
 {
     public class Class1
     {
+        string some;
     }
 }
