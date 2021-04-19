@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +8,6 @@ namespace ConcertApp.DAL
 {
     public class Class1
     {
+        //First class
     }
 }
