@@ -59,10 +59,14 @@
     <Compile Include="Context\Tickets.cs" />
     <Compile Include="Context\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AdminsRepository.cs" />
+    <Compile Include="Repositories\ConcertsRepository.cs" />
+    <Compile Include="Repositories\CreditCardsRepository.cs" />
+    <Compile Include="Repositories\GenericRepository.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\UsersRepository.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

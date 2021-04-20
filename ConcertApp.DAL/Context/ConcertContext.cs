@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ConcertApp.DAL.Context
 {
-    class ConcertContext:DbContext
+    public class ConcertContext:DbContext
     {
         public DbSet<Admins> Admins { get; set; }
         public DbSet<Concerts> Concerts { get; set; }
