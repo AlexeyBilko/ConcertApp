@@ -66,13 +66,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+<<<<<<< HEAD
+=======
+    <Page Include="Views\MainView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+>>>>>>> fbd0fce09a995f3f42de43ca5b70a503fedf016f
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
+=======
+    <Compile Include="Infrastructure\BaseNotifyPropertyChanged.cs" />
+    <Compile Include="Infrastructure\INavigate.cs" />
+    <Compile Include="Infrastructure\RelayCommand.cs" />
+    <Compile Include="Infrastructure\Switcher.cs" />
+    <Compile Include="Views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+>>>>>>> fbd0fce09a995f3f42de43ca5b70a503fedf016f
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -103,6 +120,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Folder Include="Infrastructure\" />
     <Folder Include="Models\" />
   </ItemGroup>
@@ -117,6 +135,10 @@
       <Project>{9ec16e11-a5cd-42c9-8b47-b9ca38eb1c96}</Project>
       <Name>ConcertApp.DAL</Name>
     </ProjectReference>
+=======
+    <Folder Include="Models\" />
+    <Folder Include="ViewModels\" />
+>>>>>>> fbd0fce09a995f3f42de43ca5b70a503fedf016f
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

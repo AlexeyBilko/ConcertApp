@@ -44,6 +44,14 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+<<<<<<< HEAD
   <ItemGroup />
+=======
+  <ItemGroup>
+    <Folder Include="DTO\" />
+    <Folder Include="Modules\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+>>>>>>> fbd0fce09a995f3f42de43ca5b70a503fedf016f
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
