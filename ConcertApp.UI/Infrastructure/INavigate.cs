@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
-namespace ConcertApp.BLL
+namespace ConcertApp.UI.Infrastructure
 {
-    public class Class1
+    interface INavigate
     {
-        string some;
+        void Navigate(UserControl page);
     }
 }
