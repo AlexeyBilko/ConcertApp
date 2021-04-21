@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ConcertApp.UI.Infrastructure
 {
-    class BaseNotifyPropertyChanged : INotifyPropertyChanged
+    public class BaseNotifyPropertyChanged : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         protected void NotifyPropertyChanged([CallerMemberName]string propertyName = "")

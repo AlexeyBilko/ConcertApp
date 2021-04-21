@@ -6,14 +6,18 @@
         xmlns:local="clr-namespace:ConcertApp.UI.Views"
         xmlns:vm="clr-namespace:ConcertApp.UI.ViewModels"
         mc:Ignorable="d"
-        Title="MainView" Height="450" Width="710.004">
+        Title="MainView" Height="450" Width="710">
     <Window.DataContext>
         <vm:MainViewModel></vm:MainViewModel>
     </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="600"></RowDefinition>
-            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="65"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
+
+       
+        <ContentControl Grid.Row="1"
+                        Content="{Binding CurrentPage}"></ContentControl>
     </Grid>
 </Window>
