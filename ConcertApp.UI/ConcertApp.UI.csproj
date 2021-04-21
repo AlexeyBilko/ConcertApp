@@ -113,6 +113,10 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ConcertApp.BLL\ConcertApp.BLL.csproj">
+      <Project>{242504ce-cf2e-4418-8bc6-02de33677528}</Project>
+      <Name>ConcertApp.BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ConcertApp.DAL\ConcertApp.DAL.csproj">
       <Project>{9ec16e11-a5cd-42c9-8b47-b9ca38eb1c96}</Project>
       <Name>ConcertApp.DAL</Name>

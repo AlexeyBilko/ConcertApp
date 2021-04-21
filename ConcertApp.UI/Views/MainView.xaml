@@ -4,23 +4,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConcertApp.UI.Views"
+        xmlns:vm="clr-namespace:ConcertApp.UI.ViewModels"
         mc:Ignorable="d"
-        Title="MainView" Height="450" Width="800" WindowStyle="None" MouseDown="Window_MouseDown">
+        Title="MainView" Height="450" Width="710.004">
+    <Window.DataContext>
+        <vm:MainViewModel></vm:MainViewModel>
+    </Window.DataContext>
     <Grid>
-        <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="*"></ColumnDefinition>
-        <ColumnDefinition Width="4*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <StackPanel>
-            <Button>
-                First
-            </Button>
-            <Button>
-                Second
-            </Button>
-            <Button>
-                Third
-            </Button>
-        </StackPanel>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="600"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
     </Grid>
 </Window>

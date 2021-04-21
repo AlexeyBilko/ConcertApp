@@ -13,8 +13,7 @@ namespace ConcertApp.UI.ViewModels
     {
         public MainViewModel()
         {
-            AdminsRepository repository = new AdminsRepository(new ConcertContext());
-            repository.CreateOrUpdate(new DAL.Context.Admins());
+
         }
     }
 }
