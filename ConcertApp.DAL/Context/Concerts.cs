@@ -16,6 +16,6 @@ namespace ConcertApp.DAL.Context
         public string Actors { get; set; }
         public string Address { get; set; }
 
-        //public string Date
+        public DateTime StartTime { get; set; }
     }
 }
