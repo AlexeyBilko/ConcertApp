@@ -1,23 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace ConcertApp.DAL.Context
 {
-    public class ConcertContext:DbContext
+    using System;
+    using System.Data.Entity;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Linq;
+
+    public partial class ConcertContext : DbContext
     {
-        public DbSet<Admins> Admins { get; set; }
-        public DbSet<Concerts> Concerts { get; set; }
-        public DbSet<CreditCards> Cards { get; set; }
-        public DbSet<Tickets> Tickets { get; set; }
-        public DbSet<Users> Users { get; set; }
-
-        public ConcertContext():base("name=ConcertContext")
+        public ConcertContext()
+            : base("name=ConcertContext_new2")
         {
+        }
 
+        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
+        public virtual DbSet<Admins> Admins { get; set; }
+        public virtual DbSet<Concerts> Concerts { get; set; }
+        public virtual DbSet<CreditCards> CreditCards { get; set; }
+        public virtual DbSet<Tickets> Tickets { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Concerts>()
+                .HasMany(e => e.Tickets)
+                .WithOptional(e => e.Concerts)
+                .HasForeignKey(e => e.ConcertId);
+
+            modelBuilder.Entity<CreditCards>()
+                .HasMany(e => e.Users)
+                .WithOptional(e => e.CreditCards)
+                .HasForeignKey(e => e.CardId);
+
+            modelBuilder.Entity<Users>()
+                .HasMany(e => e.Tickets)
+                .WithOptional(e => e.Users)
+                .HasForeignKey(e => e.UserId);
         }
     }
 }
