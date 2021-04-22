@@ -17,6 +17,7 @@ namespace ConcertApp.UI.Infrastructure
             kernel = new StandardKernel(new ConcertDBModule());
         }
 
-        public LogInAppViewModel LogInViewModel => kernel.Get<LogInAppViewModel>();
+        public LogInAppViewModel LogInAppViewModel => kernel.Get<LogInAppViewModel>();
+        public TestViewModel TestViewModel => kernel.Get<TestViewModel>();
     }
 }
