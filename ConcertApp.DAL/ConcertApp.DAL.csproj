@@ -45,8 +45,6 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,7 +57,6 @@
     <Compile Include="Context\ConcertContext.cs" />
     <Compile Include="Context\Concerts.cs" />
     <Compile Include="Context\CreditCards.cs" />
-    <Compile Include="Context\C__MigrationHistory.cs" />
     <Compile Include="Context\Tickets.cs" />
     <Compile Include="Context\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
