@@ -82,6 +82,11 @@ namespace ConcertApp.UI.ViewModels
                 if (isRight == false)
                     MessageBox.Show("Incorrect email or password");
             });
+            RegistrationCommand = new RelayCommand((param) => {
+                
+                Switcher.Switch(new RegistartionView()); 
+            
+            });
         }
 
         public ICommand LogInCommand { get; private set; }
@@ -90,5 +95,7 @@ namespace ConcertApp.UI.ViewModels
         {
             SelectedUser = userService.Get(userId);
         }
+
+        public ICommand RegistrationCommand { get; private set; }
     }
 }

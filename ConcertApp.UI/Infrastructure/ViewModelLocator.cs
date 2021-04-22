@@ -19,5 +19,6 @@ namespace ConcertApp.UI.Infrastructure
 
         public LogInAppViewModel LogInAppViewModel => kernel.Get<LogInAppViewModel>();
         public TestViewModel TestViewModel => kernel.Get<TestViewModel>();
+        public RegistrationViewModel RegistrationViewModel => kernel.Get<RegistrationViewModel>();
     }
 }
