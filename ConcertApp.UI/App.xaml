@@ -4,7 +4,6 @@
              xmlns:local="clr-namespace:ConcertApp.UI"
              xmlns:locator="clr-namespace:ConcertApp.UI.Infrastructure"
              StartupUri="Views/MainView.xaml">
-
     <Application.Resources>
         <locator:ViewModelLocator x:Key="locator"></locator:ViewModelLocator>
 

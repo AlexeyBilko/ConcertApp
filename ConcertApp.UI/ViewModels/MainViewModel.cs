@@ -2,6 +2,7 @@
 using ConcertApp.DAL.Context;
 using ConcertApp.DAL.Repositories;
 using ConcertApp.UI.Infrastructure;
+using ConcertApp.UI.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ using System.Windows.Controls;
 
 namespace ConcertApp.UI.ViewModels
 {
-    class MainViewModel : BaseNotifyPropertyChanged, INavigate
+    public class MainViewModel : BaseNotifyPropertyChanged, INavigate
     {
         private UserControl currentPage;
         public UserControl CurrentPage
