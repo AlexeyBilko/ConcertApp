@@ -4,14 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ConcertApp.UI.Views"
-            xmlns:vm="clr-namespace:MyBank.ViewModels"
+             xmlns:vm="clr-namespace:ConcertApp.UI.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="385" d:DesignWidth="710"
-             DataContext="{Binding Source={StaticResource locator}, Path=LogInViewModel}">
+             DataContext="{Binding Source={StaticResource locator}, Path=LogInAppViewModel}">
     <Grid Background="#EFEFEF">
         <Grid.RowDefinitions>
-            <RowDefinition Height="235"></RowDefinition>
-            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="200"></RowDefinition>
+            <RowDefinition Height="120"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
@@ -23,7 +23,7 @@
             <Label FontFamily="Berlin Sans FB Demi" FontSize="19"  Grid.Row="1" Margin="174,29.6,-30.6,20.2" Grid.RowSpan="2">Email</Label>
             <Label FontFamily="Berlin Sans FB Demi" FontSize="19"  Grid.Row="2" Margin="174,23.2,-30.6,-12.8">Password</Label>
 
-            <TextBox Text="{Binding TelNumber}" FontSize="14" Grid.Row= "1" Width="250" Height="42" Margin="171,15,72.2,9.6" Style="{DynamicResource TextBoxCornerRadius7}" Grid.ColumnSpan="2">
+            <TextBox Text="{Binding Email}" FontSize="14" Grid.Row= "1" Width="250" Height="42" Margin="171,15,72.2,9.6" Style="{DynamicResource TextBoxCornerRadius7}" Grid.ColumnSpan="2">
                 <TextBox.ToolTip>
                     <ToolTip>
                         Enter your phone number
@@ -38,10 +38,19 @@
                     </ToolTip>
                 </TextBox.ToolTip>
             </TextBox>
+            <Label FontFamily="Berlin Sans FB Demi" FontSize="19"  Grid.Row="2" Margin="367,113.2,-223.6,-102.8" Content="or"/>
         </Grid>
         <Grid Grid.Row="1">
-            <Button Command="{Binding LogInCommand}" Background="#FF2E00" Grid.Row="1" Margin="30" Width="200" Height="40" Style="{DynamicResource ButtonStyle1}">
+            <Button Command="{Binding LogInCommand}" Background="#FF2E00" Margin="155,40,393.4,40" Height="40" Style="{DynamicResource ButtonStyle1}">
                 <Label Foreground="#efefef" FontFamily="Berlin Sans FB Demi" FontSize="22">Log in</Label>
+                <Button.ToolTip>
+                    <ToolTip>
+                        Log I
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button Command="{Binding LogInCommand}" Background="#FF2E00" Height="40" Margin="405,29,181.4,30" Style="{DynamicResource ButtonStyle1}">
+                <Label Foreground="#efefef" FontFamily="Berlin Sans FB Demi" FontSize="22">Register</Label>
                 <Button.ToolTip>
                     <ToolTip>
                         Log I

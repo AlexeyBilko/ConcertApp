@@ -1,17 +1,20 @@
 ﻿
+using ConcertApp.BLL.DTO;
 using ConcertApp.DAL.Context;
 using ConcertApp.DAL.Repositories;
 using ConcertApp.UI.Infrastructure;
+using ConcertApp.UI.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace ConcertApp.UI.ViewModels
 {
-    class MainViewModel : BaseNotifyPropertyChanged, INavigate
+    public class MainViewModel : BaseNotifyPropertyChanged, INavigate
     {
         private UserControl currentPage;
         public UserControl CurrentPage
@@ -24,6 +27,20 @@ namespace ConcertApp.UI.ViewModels
             }
         }
 
+        private UserDTO selectedBankUser;
+
+        public UserDTO SelectedBankUser
+        {
+            get => selectedBankUser;
+            set
+            {
+                selectedBankUser = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+
+
         public void InitCommands()
         {
 
@@ -33,6 +50,23 @@ namespace ConcertApp.UI.ViewModels
         {
             CurrentPage = new LogInAppView();
             InitCommands();
+            Switcher.ContentArea = this;
+        }
+
+        public MainViewModel(UserDTO bu_dto)
+        {
+            CurrentPage = new TestView();
+
+            try
+            {
+                Task task = new Task(() => InitCommands());
+                task.Start();
+            }
+            catch
+            {
+                MessageBox.Show("Error!");
+            }
+
             Switcher.ContentArea = this;
         }
 
