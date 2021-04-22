@@ -22,7 +22,7 @@ namespace ConcertApp.BLL.DTO
 
         public int? CardId { get; set; }
 
-        public ICollection<TicketDTO> Tickets { get; set; } = new HashSet<TicketDTO>();
+        //public ICollection<TicketDTO> Tickets { get; set; } = new HashSet<TicketDTO>();
 
     }
 }

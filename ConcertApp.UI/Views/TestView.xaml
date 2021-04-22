@@ -7,7 +7,7 @@
              xmlns:vm="clr-namespace:ConcertApp.UI.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
-             DataContext="{Binding Source={StaticResource locator}, Path=LogInAppViewModel}">
+             DataContext="{Binding Source={StaticResource locator}, Path=TestViewModel}">
     <Grid Background="Bisque">
             
     </Grid>

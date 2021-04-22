@@ -15,7 +15,7 @@ namespace ConcertApp.UI.ViewModels
 
         private UserDTO selectedBankUser;
 
-        public UserDTO SelectedBankUser
+        public UserDTO SelectedUser
         {
             get => selectedBankUser;
             set
@@ -28,12 +28,12 @@ namespace ConcertApp.UI.ViewModels
         public TestViewModel(UserService us)
         {
             userService = us;
-            SelectedBankUser = new UserDTO();
+            SelectedUser = new UserDTO();
         }
 
         public void InitUser(int userId)
         {
-            SelectedBankUser = userService.Get(userId);
+            SelectedUser = userService.Get(userId);
         }
     }
 }
