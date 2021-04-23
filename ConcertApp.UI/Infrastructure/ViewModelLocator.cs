@@ -21,5 +21,6 @@ namespace ConcertApp.UI.Infrastructure
         public TestViewModel TestViewModel => kernel.Get<TestViewModel>();
         public RegistrationViewModel RegistrationViewModel => kernel.Get<RegistrationViewModel>();
         public TopBarViewModel TopBarViewModel => kernel.Get<TopBarViewModel>();
+        public TopBarAfterLogInViewModel TopBarAfterLogInViewModel => kernel.Get<TopBarAfterLogInViewModel>();
     }
 }

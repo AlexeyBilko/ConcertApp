@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="ConcertApp.UI.Views.TopBarAfterLogInView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ConcertApp.UI.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="90" d:DesignWidth="710"
+             DataContext="{Binding Source={StaticResource locator}, Path=TopBarViewModel}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label Margin="20" Foreground="Red" FontFamily="Arial Black" Content="ConcertApp" FontSize="29" Grid.Column="0">
+
+        </Label>
+
+        <TextBox Grid.Column="1" Text="{Binding Search}" FontSize="19" Grid.Row= "1" Width="200" Height="32" Style="{DynamicResource TextBoxCornerRadius7}">
+            <TextBox.ToolTip>
+                <ToolTip>
+                    Search
+                </ToolTip>
+            </TextBox.ToolTip>
+        </TextBox>
+
+        <Button Grid.Column="2" Command="{Binding ProfileCommand}" Background="Gray" Height="40" Width="80" Margin="10" Style="{DynamicResource ButtonStyle1}">
+            <Label Foreground="#efefef" FontFamily="Berlin Sans FB Demi" FontSize="22">Profile</Label>
+            <Button.ToolTip>
+                <ToolTip>
+                    Log In
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+    </Grid>
+</UserControl>

@@ -85,6 +85,7 @@
     <Compile Include="Infrastructure\Switcher.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
     <Compile Include="ViewModels\TestViewModel.cs" />
+    <Compile Include="ViewModels\TopBarAfterLogInViewModel.cs" />
     <Compile Include="ViewModels\TopBarViewModel.cs" />
     <Compile Include="Views\LogInAppView.xaml.cs">
       <DependentUpon>LogInAppView.xaml</DependentUpon>
@@ -97,6 +98,9 @@
     </Compile>
     <Compile Include="Views\TestView.xaml.cs">
       <DependentUpon>TestView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopBarAfterLogInView.xaml.cs">
+      <DependentUpon>TopBarAfterLogInView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TopBarView.xaml.cs">
       <DependentUpon>TopBarView.xaml</DependentUpon>
@@ -156,6 +160,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\TestView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopBarAfterLogInView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

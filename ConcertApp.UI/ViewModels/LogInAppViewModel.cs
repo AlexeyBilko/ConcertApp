@@ -75,6 +75,7 @@ namespace ConcertApp.UI.ViewModels
                         TestViewModel pvm = page.DataContext as TestViewModel;
                         pvm.InitUser(item.Id);
                         (Switcher.ContentArea as MainViewModel).SelectedBankUser = item;
+                        (Switcher.ContentArea as MainViewModel).CurrentTopPage = new TopBarAfterLogInView();
                         Switcher.Switch(page);
                         break;
                     }
