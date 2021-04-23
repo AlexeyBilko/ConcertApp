@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ConcertApp.UI.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
+             d:DesignHeight="450" d:DesignWidth="710"
              DataContext="{Binding Source={StaticResource locator}, Path=RegistrationViewModel}">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -18,7 +18,7 @@
             <RowDefinition Height="7*"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Button Grid.Column="0" Grid.Row="1" Command="{Binding GoBackCommand}" FontSize="20" Background="White" FontWeight="Bold" Content="Back" Width="130" Height="60" >
+        <Button Grid.Column="0" Grid.Row="1" Command="{Binding GoBackCommand}" FontSize="20" Background="White" FontWeight="Bold" Content="Back" Width="100" Height="60" >
 
         </Button>
       
@@ -32,7 +32,7 @@
                                  Background="Transparent"
                                  FontSize="20"
                                  Margin="5"
-                                 Height="30"
+                                 Height="20"
                                  Text="{Binding NewUser.Email}"
                                  />
                 </Border>
@@ -47,7 +47,7 @@
                                  Background="Transparent"
                                  FontSize="20"
                                  Margin="5"
-                                 Height="30"
+                                 Height="20"
                                  Text="{Binding NewUser.NumberPhone}"
                                  />
                 </Border>
@@ -60,7 +60,7 @@
                                  Background="Transparent"
                                  FontSize="20"
                                  Margin="5"
-                                 Height="30"
+                                 Height="20"
                                  Text="{Binding NewUser.Name}"
                                  />
                 </Border>
@@ -75,7 +75,7 @@
                                  Background="Transparent"
                                  FontSize="17"
                                  Margin="5"
-                                 Height="30"
+                                 Height="20"
                                  Text="{Binding NewUser.Surname}"
                                  />
                 </Border>
@@ -88,7 +88,7 @@
                                  Background="Transparent"
                                  FontSize="17"
                                  Margin="5"
-                                 Height="30"
+                                 Height="20"
                                  x:Name="PasswordBox"
                                  />
                 </Border>
@@ -99,7 +99,7 @@
                 <Button Margin="5" 
                     Command="{Binding RegistrationCommand}" 
                     Style="{StaticResource ButtonStyle1}" Background="DarkOrange" CommandParameter="{Binding ElementName=PasswordBox}"
-                    Content="Registration" FontSize="17" Height="30" Width="130" Foreground="White" FontWeight="Bold">
+                    Content="Registration" FontSize="17" Height="35" Width="130" Foreground="White" FontWeight="Bold">
 
                 </Button>
 

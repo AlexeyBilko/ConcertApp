@@ -27,6 +27,17 @@ namespace ConcertApp.UI.ViewModels
             }
         }
 
+        private UserControl currentTopPage;
+        public UserControl CurrentTopPage
+        {
+            get => currentTopPage;
+            set
+            {
+                currentTopPage = value;
+                NotifyPropertyChanged();
+            }
+        }
+
         private UserDTO selectedBankUser;
 
         public UserDTO SelectedBankUser
@@ -49,6 +60,7 @@ namespace ConcertApp.UI.ViewModels
         public MainViewModel()
         {
             CurrentPage = new LogInAppView();
+            currentTopPage = new TopBarView();
             InitCommands();
             Switcher.ContentArea = this;
         }
