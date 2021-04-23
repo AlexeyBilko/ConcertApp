@@ -54,5 +54,13 @@ namespace ConcertApp.BLL.Services
             userRepository.CreateOrUpdate(user);
             userRepository.SaveChanges();
         }
+
+        public UserDTO GetSameEmail(string email)
+        {
+            return GetAll().FirstOrDefault((user) => 
+            { 
+                return user.Email == email; 
+            });
+        }
     }
 }

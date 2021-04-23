@@ -49,7 +49,7 @@
                     </ToolTip>
                 </Button.ToolTip>
             </Button>
-            <Button Command="{Binding LogInCommand}" Background="#FF2E00" Height="40" Margin="405,29,181.4,30" Style="{DynamicResource ButtonStyle1}">
+            <Button Command="{Binding RegistrationCommand}" Background="#FF2E00" Height="40" Margin="405,29,181.4,30" Style="{DynamicResource ButtonStyle1}">
                 <Label Foreground="#efefef" FontFamily="Berlin Sans FB Demi" FontSize="22">Register</Label>
                 <Button.ToolTip>
                     <ToolTip>
