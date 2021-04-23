@@ -75,12 +75,18 @@ namespace ConcertApp.UI.ViewModels
                         TestViewModel pvm = page.DataContext as TestViewModel;
                         pvm.InitUser(item.Id);
                         (Switcher.ContentArea as MainViewModel).SelectedBankUser = item;
+                        (Switcher.ContentArea as MainViewModel).CurrentTopPage = new TopBarAfterLogInView();
                         Switcher.Switch(page);
                         break;
                     }
                 }
                 if (isRight == false)
                     MessageBox.Show("Incorrect email or password");
+            });
+            RegistrationCommand = new RelayCommand((param) => {
+                
+                Switcher.Switch(new RegistartionView()); 
+            
             });
         }
 
@@ -90,5 +96,7 @@ namespace ConcertApp.UI.ViewModels
         {
             SelectedUser = userService.Get(userId);
         }
+
+        public ICommand RegistrationCommand { get; private set; }
     }
 }

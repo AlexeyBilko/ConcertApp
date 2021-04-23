@@ -18,7 +18,7 @@ namespace ConcertApp.DAL.Context
         public virtual Concerts Concert { get; set; }
     
         public int? UserId { get; set; }
-        public Users User { get; set; }
+        public virtual Users User { get; set; }
        
     }
 }
