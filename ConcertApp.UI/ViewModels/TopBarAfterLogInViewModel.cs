@@ -1,4 +1,5 @@
 ﻿using ConcertApp.UI.Infrastructure;
+using ConcertApp.UI.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,7 @@ namespace ConcertApp.UI.ViewModels
         {
             ProfileCommand = new RelayCommand((param) => {
                 //Switcher.Switch(new ProfileView());
+                (Switcher.ContentArea as MainViewModel).CurrentPage = new ProfileView();
             });
         }
 

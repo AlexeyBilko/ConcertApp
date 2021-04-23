@@ -22,5 +22,6 @@ namespace ConcertApp.UI.Infrastructure
         public RegistrationViewModel RegistrationViewModel => kernel.Get<RegistrationViewModel>();
         public TopBarViewModel TopBarViewModel => kernel.Get<TopBarViewModel>();
         public TopBarAfterLogInViewModel TopBarAfterLogInViewModel => kernel.Get<TopBarAfterLogInViewModel>();
+        public ProfileViewModel ProfileViewModel => kernel.Get<ProfileViewModel>();
     }
 }
