@@ -49,11 +49,11 @@
                                     Width="240"
                                     Height="250"></Image>
                                 <Label Height="10"></Label>
-                                <TextBlock Text="{Binding Title}" FontWeight="Black" TextWrapping="WrapWithOverflow" 
+                                <TextBlock Height="45" Text="{Binding Title}" FontWeight="Black" TextWrapping="WrapWithOverflow" 
                                            HorizontalAlignment="Center"
                                            FontSize="20"></TextBlock>
                                 <Label Height="10"></Label>
-                                <Button Style="{DynamicResource ButtonStyle1}"  Background="OrangeRed" Foreground="White" FontWeight="Bold" FontSize="15">
+                                <Button Style="{DynamicResource ButtonStyle1}"  Background="OrangeRed" Foreground="White" Height="30" FontWeight="Bold" FontSize="15">
                                     Order
                                 </Button>
                             </StackPanel>
@@ -61,47 +61,49 @@
                     </Border>
                 </DataTemplate>
             </ListView.ItemTemplate>
-            
-        </ListView>
 
+        </ListView>
         <StackPanel Orientation="Vertical">
-            <Border BorderThickness="7" BorderBrush="Red" CornerRadius="30" Margin="5,40,0,0">
+            <Border BorderThickness="6" BorderBrush="Red" CornerRadius="30" Margin="5,40,0,0">
                 <Calendar BorderThickness="0" Margin="10" Foreground="Red" Background="White" MaxWidth="200">
-                
-                   
+
+
                 </Calendar>
             </Border>
 
-            <Button FontSize="20" 
-                    HorizontalAlignment="Center" FontWeight="DemiBold" Margin="0,20,0,0" 
+            <Label Background="White" Height="20"></Label>
+            
+            <Border BorderThickness="6" BorderBrush="Red" CornerRadius="15" Margin="5">
+                <Button FontSize="18"
+                    HorizontalAlignment="Center" FontWeight="DemiBold" 
                     Foreground="Red" Background="White" BorderBrush="White" 
                     Command="{Binding GetConcertsCommand}"
                     >Concert</Button>
-            
-            <Button 
-                FontSize="20" HorizontalAlignment="Center" 
-                FontWeight="DemiBold" Margin="0,4,0,0" Foreground="Red" 
+            </Border>
+            <Border BorderThickness="6" BorderBrush="Red" CornerRadius="15" Margin="5">
+
+                <Button 
+                FontSize="18" HorizontalAlignment="Center" 
+                FontWeight="DemiBold" Foreground="Red" 
                 Background="White" BorderBrush="White"
                 Command="{Binding GetTheatreCommand}">Theatre</Button>
-            
-            
-            <Button FontSize="20" HorizontalAlignment="Center" 
-                    FontWeight="DemiBold" Margin="0,4,0,0" 
+            </Border>
+            <Border BorderThickness="6" BorderBrush="Red" CornerRadius="15" Margin="5">
+
+                <Button FontSize="18" HorizontalAlignment="Center" 
+                    FontWeight="DemiBold"
                     Foreground="Red" Background="White" 
                     BorderBrush="White"
                     Command="{Binding GetFestivalsCommand}">Festival</Button>
-            
-            <Button FontSize="20" HorizontalAlignment="Center" 
-                    FontWeight="DemiBold" Margin="0,4,0,0" 
+            </Border>
+            <Border BorderThickness="6" BorderBrush="Red" CornerRadius="15" Margin="5">
+
+                <Button FontSize="18" HorizontalAlignment="Center" 
+                    FontWeight="DemiBold"
                     Foreground="Red" Background="White" 
                     BorderBrush="White"
                     Command="{Binding GetHumorCommand}">Humor</Button>
-            <Image
-                Source="line.png" Width="200" Height="50" HorizontalAlignment="Left"
-                Margin="0,20,0,0">
-                
-            </Image>
-            
+            </Border>
         </StackPanel>
     </Grid>
 </UserControl>

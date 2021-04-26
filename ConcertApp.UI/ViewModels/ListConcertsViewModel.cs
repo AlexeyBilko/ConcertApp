@@ -27,9 +27,12 @@ namespace ConcertApp.UI.ViewModels
         ConcertService concertService;
 
         public ConcertDTO SelectedConcert { get; set; }
-        public ListConcertsViewModel(ConcertService service)
+
+        public ListConcertsViewModel(ConcertService service, UserService us)
         {
             concertService = service;
+            userService = us;
+            Users = new ObservableCollection<UserDTO>(userService.GetAll());
             Concerts = new ObservableCollection<ConcertDTO>(concertService.GetAll());
             CreateCommands();
         }
@@ -45,6 +48,9 @@ namespace ConcertApp.UI.ViewModels
                 NotifyPropertyChanged();
             }
         }
+
+        public UserService userService;
+        public ObservableCollection<UserDTO> Users { get; set; }
 
         private void CreateCommands()
         {
@@ -101,5 +107,10 @@ namespace ConcertApp.UI.ViewModels
         public ICommand GetFestivalsCommand { get; private set; }
         public ICommand GetHumorCommand { get; private set; }
 
+
+        public void InitUser(int userId)
+        {
+            SelectedBankUser = userService.Get(userId);
+        }
     }
 }
