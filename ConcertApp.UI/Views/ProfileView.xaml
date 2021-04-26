@@ -6,25 +6,55 @@
              xmlns:local="clr-namespace:ConcertApp.UI.Views"
              mc:Ignorable="d" 
              d:DesignHeight="385" d:DesignWidth="710"
-             DataContext="{Binding Source={StaticResource locator}, Path=LogInAppViewModel}">
+             DataContext="{Binding Source={StaticResource locator}, Path=ProfileViewModel}">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="2*"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
 
-
-        <Grid Grid.Column="1">
+        <Grid Grid.Column="1" Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"></RowDefinition>
                 <RowDefinition Height="4*"></RowDefinition>
                 <RowDefinition Height="1*"></RowDefinition>
             </Grid.RowDefinitions>
-            <StackPanel Grid.Row="1">
+            <StackPanel Grid.Row="1" Grid.Column="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <TextBlock FontSize="18" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0">Your name:</TextBlock>
+                        <TextBlock FontSize="18" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0">Your surname:</TextBlock>
+                        <TextBlock FontSize="18" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0">Your email:</TextBlock>
+                        <TextBlock FontSize="18" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0">Your number phone:</TextBlock>
+                        <TextBlock FontSize="18" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0">Your password:</TextBlock>
+                        <TextBlock FontSize="18" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0">Quantity tickets:</TextBlock>
+                    </StackPanel>
 
+                    <StackPanel Grid.Column="1">
+                        <TextBlock FontSize="18" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" Text="{Binding CurrentUser.Name}"></TextBlock>
+                        <TextBlock FontSize="18" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" Text="{Binding CurrentUser.Surname}"></TextBlock>
+                        <TextBlock FontSize="18" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" Text="{Binding CurrentUser.Email}"></TextBlock>
+                        <TextBlock FontSize="18" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" Text="{Binding CurrentUser.NumberPhone}"></TextBlock>
+                        <TextBlock FontSize="18" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" Text="{Binding CurrentUser.Password}"></TextBlock>
+                        <TextBlock FontSize="18" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" Text="-"></TextBlock>
+                    </StackPanel>
+                </Grid>
+                
             </StackPanel>
         </Grid>
+        <Button Grid.Row="2" Grid.Column="1" 
+                Style="{StaticResource ButtonStyle1}" Width="120" Height="50" 
+                FontFamily="Berlin Sans FB Demi" FontSize="18" Foreground="White" Background="DarkRed">My tickets</Button>
 
     </Grid>
 </UserControl>

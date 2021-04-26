@@ -71,12 +71,16 @@ namespace ConcertApp.UI.ViewModels
                     if (item.Password == Password && item.Email == Email)
                     {
                         isRight = true;
-                        TestView page = new TestView();
-                        TestViewModel pvm = page.DataContext as TestViewModel;
-                        pvm.InitUser(item.Id);
-                        (Switcher.ContentArea as MainViewModel).SelectedBankUser = item;
-                        (Switcher.ContentArea as MainViewModel).CurrentTopPage = new TopBarAfterLogInView();
-                        Switcher.Switch(page);
+                        //TestView page = new TestView();
+                        // TestViewModel pvm = page.DataContext as TestViewModel;
+                        //pvm.InitUser(item.Id);
+                        //(Switcher.ContentArea as MainViewModel).SelectedBankUser = item;
+                        //(Switcher.ContentArea as MainViewModel).CurrentTopPage = new TopBarAfterLogInView();
+                        // Switcher.Switch(page);
+                        TopBarAfterLogInView view = new TopBarAfterLogInView();
+                        (view.DataContext as TopBarAfterLogInViewModel).CurrentUser = item;
+                        (Switcher.ContentArea as MainViewModel).CurrentTopPage = view;
+                        Switcher.Switch(new ListConcertsView());
                         break;
                     }
                 }
