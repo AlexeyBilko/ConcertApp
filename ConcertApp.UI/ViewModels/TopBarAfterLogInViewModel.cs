@@ -25,6 +25,9 @@ namespace ConcertApp.UI.ViewModels
             }
         }
         ConcertService concertService;
+
+        public UserDTO CurrentUser { get; set; }
+
         public TopBarAfterLogInViewModel(ConcertService service)
         {
             concertService = service;
@@ -34,8 +37,10 @@ namespace ConcertApp.UI.ViewModels
         public void InitCommands()
         {
             ProfileCommand = new RelayCommand((param) => {
-                //Switcher.Switch(new ProfileView());
-                (Switcher.ContentArea as MainViewModel).CurrentPage = new ProfileView();
+
+                ProfileView view = new ProfileView();
+                (view.DataContext as ProfileViewModel).CurrentUser = CurrentUser;
+                Switcher.Switch(view);
             });
 
 

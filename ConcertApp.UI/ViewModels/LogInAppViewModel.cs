@@ -77,6 +77,7 @@ namespace ConcertApp.UI.ViewModels
                         (Switcher.ContentArea as MainViewModel).SelectedBankUser = item;
                         (Switcher.ContentArea as MainViewModel).CurrentTopPage = new TopBarAfterLogInView();
                         Switcher.Switch(page);
+						
                         break;
                     }
                 }
