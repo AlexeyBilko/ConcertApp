@@ -65,7 +65,7 @@
         </ListView>
         <StackPanel Orientation="Vertical">
             <Border BorderThickness="6" BorderBrush="Red" CornerRadius="30" Margin="5,40,0,0">
-                <Calendar BorderThickness="0" Margin="10" Foreground="Red" Background="White" MaxWidth="200">
+                <Calendar SelectedDate="{Binding Date}" BorderThickness="0" Margin="10" Foreground="Red" Background="White" MaxWidth="200">
 
 
                 </Calendar>
@@ -104,6 +104,14 @@
                     BorderBrush="White"
                     Command="{Binding GetHumorCommand}">Humor</Button>
             </Border>
+
+            <Label Background="White" Height="20"></Label>
+            <Button FontSize="15" HorizontalAlignment="Center" 
+                    FontWeight="DemiBold"
+                    Foreground="Red" Background="White" 
+                    BorderBrush="White"
+                    Command="{Binding RefreshCommand}">Refresh</Button>
+
         </StackPanel>
     </Grid>
 </UserControl>

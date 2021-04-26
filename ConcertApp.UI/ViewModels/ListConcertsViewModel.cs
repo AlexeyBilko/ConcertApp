@@ -52,17 +52,30 @@ namespace ConcertApp.UI.ViewModels
         public UserService userService;
         public ObservableCollection<UserDTO> Users { get; set; }
 
+        private DateTime date;
+        public DateTime Date
+        {
+            get => date;
+            set
+            {
+                date = value;
+                NotifyPropertyChanged();
+                SortByDate();
+            }
+        }
+
         private void CreateCommands()
         {
-            GetConcertsCommand = new RelayCommand((param) => {
+            GetConcertsCommand = new RelayCommand((param) =>
+            {
 
                 Concerts = new ObservableCollection<ConcertDTO>(
-                    
-                    concertService.GetAll().Where((concert)=> 
-                    { 
-                        return concert.TypeOfEvent == "Concert"; 
+
+                    concertService.GetAll().Where((concert) =>
+                    {
+                        return concert.TypeOfEvent == "Concert";
                     })
-                 
+
                  );
             });
             GetTheatreCommand = new RelayCommand((param) =>
@@ -76,7 +89,8 @@ namespace ConcertApp.UI.ViewModels
 
                 );
             });
-            GetFestivalsCommand = new RelayCommand((param) => {
+            GetFestivalsCommand = new RelayCommand((param) =>
+            {
 
                 Concerts = new ObservableCollection<ConcertDTO>(
 
@@ -88,7 +102,8 @@ namespace ConcertApp.UI.ViewModels
                 );
             });
 
-            GetHumorCommand = new RelayCommand((param) => {
+            GetHumorCommand = new RelayCommand((param) =>
+            {
 
                 Concerts = new ObservableCollection<ConcertDTO>(
 
@@ -99,14 +114,27 @@ namespace ConcertApp.UI.ViewModels
 
                 );
             });
+            RefreshCommand = new RelayCommand((param) =>
+            {
+                Concerts = new ObservableCollection<ConcertDTO>(concertService.GetAll());
+            });
+        }
 
+        public void SortByDate()
+        {
+            Concerts = new ObservableCollection<ConcertDTO>(
+                concertService.GetAll().Where((concert) =>
+                {
+                    return concert.StartTime.Value.Date == Date.Date;
+                })
+            );
         }
 
         public ICommand GetConcertsCommand { get;private set; }
         public ICommand GetTheatreCommand { get; private set; }
         public ICommand GetFestivalsCommand { get; private set; }
         public ICommand GetHumorCommand { get; private set; }
-
+        public ICommand RefreshCommand { get; private set; }
 
         public void InitUser(int userId)
         {
