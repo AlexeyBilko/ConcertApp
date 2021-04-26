@@ -14,11 +14,12 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.01*"></RowDefinition>
+            
+            <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="7*"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Button Grid.Column="0" Grid.Row="1" Command="{Binding GoBackCommand}" FontSize="20" Background="White" FontWeight="Bold" Content="Back" Width="100" Height="60" >
+        <Button Grid.Column="0" Grid.Row="1" Command="{Binding GoBackCommand}" FontSize="20" Background="White" Foreground="Red" FontWeight="Bold" Content="Back" Width="100" Height="40" >
 
         </Button>
       

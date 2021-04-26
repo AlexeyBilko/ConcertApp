@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ConcertApp.UI.Views"
         xmlns:vm="clr-namespace:ConcertApp.UI.ViewModels"
         mc:Ignorable="d"
-        Title="MainView" Height="550" Width="710">
+        Title="MainView" Height="650" Width="1000">
     <Window.DataContext>
         <vm:MainViewModel></vm:MainViewModel>
     </Window.DataContext>

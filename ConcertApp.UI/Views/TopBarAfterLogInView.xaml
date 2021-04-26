@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ConcertApp.UI.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="90" d:DesignWidth="710"
+             d:DesignHeight="90" d:DesignWidth="1000"
              DataContext="{Binding Source={StaticResource locator}, Path=TopBarViewModel}">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -19,7 +19,7 @@
         </Label>
 
         <StackPanel Grid.Column="1" Orientation="Horizontal">
-            <TextBox  Text="{Binding Search}" FontSize="19" Grid.Row= "1" Width="200" Height="32" Style="{DynamicResource TextBoxCornerRadius7}" Margin="20,0,0,0">
+            <TextBox  Text="{Binding Search}" FontSize="19" Grid.Row= "1" Width="300" Height="32" Style="{DynamicResource TextBoxCornerRadius7}" Margin="20,0,0,0">
                 <TextBox.ToolTip>
                     <ToolTip>
                         Search
@@ -36,7 +36,7 @@
             </Button>
         </StackPanel>
 
-        <Button Grid.Column="2" Command="{Binding ProfileCommand}" Background="Gray" Height="40" Width="80" Margin="10" Style="{DynamicResource ButtonStyle1}">
+        <Button Grid.Column="2" Command="{Binding ProfileCommand}" Background="DarkOrange" Height="40" Width="80" Margin="10" Style="{DynamicResource ButtonStyle1}">
             <Label Foreground="#efefef" FontFamily="Berlin Sans FB Demi" FontSize="22">Profile</Label>
             <Button.ToolTip>
                 <ToolTip>
