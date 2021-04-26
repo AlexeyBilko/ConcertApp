@@ -30,7 +30,7 @@
                                  >
                     <TextBox BorderThickness="0" 
                                  Background="Transparent"
-                                 FontSize="20"
+                                 FontSize="17"
                                  Margin="5"
                                  Height="20"
                                  Text="{Binding NewUser.Email}"
@@ -45,7 +45,7 @@
 
                     <TextBox BorderThickness="0" 
                                  Background="Transparent"
-                                 FontSize="20"
+                                 FontSize="17"
                                  Margin="5"
                                  Height="20"
                                  Text="{Binding NewUser.NumberPhone}"
@@ -58,7 +58,7 @@
                                  >
                     <TextBox BorderThickness="0" 
                                  Background="Transparent"
-                                 FontSize="20"
+                                 FontSize="17"
                                  Margin="5"
                                  Height="20"
                                  Text="{Binding NewUser.Name}"
