@@ -77,6 +77,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Infrastructure\ViewModelLocator.cs" />
+    <Compile Include="ViewModels\ListConcertsViewModel.cs" />
     <Compile Include="ViewModels\LogInAppViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Infrastructure\BaseNotifyPropertyChanged.cs" />
@@ -86,11 +87,18 @@
     <Compile Include="ViewModels\ProfileViewModel.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
     <Compile Include="ViewModels\TestViewModel.cs" />
+
     <Compile Include="ViewModels\TopBarAfterLogInViewModel.cs" />
     <Compile Include="ViewModels\TopBarViewModel.cs" />
+
+    <Compile Include="Views\ListConcertsView.xaml.cs">
+      <DependentUpon>ListConcertsView.xaml</DependentUpon>
+    </Compile>
+
     <Compile Include="Views\LogInAppView.xaml.cs">
       <DependentUpon>LogInAppView.xaml</DependentUpon>
     </Compile>
+    
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
@@ -151,6 +159,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\ListConcertsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\LogInAppView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

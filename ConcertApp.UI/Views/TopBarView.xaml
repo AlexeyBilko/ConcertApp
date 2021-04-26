@@ -14,17 +14,26 @@
             <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Label Margin="20" Foreground="Red" FontFamily="Arial Black" Content="ConcertApp" FontSize="29" Grid.Column="0">
+        <Label Margin="20,20,10,20" Foreground="Red" FontFamily="Arial Black" Content="ConcertApp" FontSize="29" Grid.Column="0">
 
         </Label>
+        <StackPanel Grid.Column="1" Orientation="Horizontal">
+            <TextBox  Text="{Binding Search}" FontSize="19" Grid.Row= "1" Width="200" Height="32" Style="{DynamicResource TextBoxCornerRadius7}" Margin="20,0,0,0">
+                <TextBox.ToolTip>
+                    <ToolTip>
+                        Search
+                    </ToolTip>
+                </TextBox.ToolTip>
+            </TextBox>
 
-        <TextBox Grid.Column="1" Text="{Binding Search}" FontSize="19" Grid.Row= "1" Width="200" Height="32" Style="{DynamicResource TextBoxCornerRadius7}">
-            <TextBox.ToolTip>
-                <ToolTip>
-                    Search
-                </ToolTip>
-            </TextBox.ToolTip>
-        </TextBox>
+            <Button Width="40" Height="40" Margin="10,0,0,0" BorderBrush="White" Background="White" Command="{Binding SearchCommand}">
+                <Ellipse Width="35" Height="35">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="https://png.pngtree.com/png-clipart/20190924/original/pngtree-vector-search-icon-png-image_4869926.jpg" Stretch="UniformToFill"></ImageBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+            </Button>
+        </StackPanel>
 
         <Button Grid.Column="2" Command="{Binding LogInCommand}" Background="#FF2E00" Height="40" Margin="10" Style="{DynamicResource ButtonStyle1}">
             <Label Foreground="#efefef" FontFamily="Berlin Sans FB Demi" FontSize="22">Log in</Label>

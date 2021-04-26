@@ -47,9 +47,9 @@ namespace ConcertApp.UI.ViewModels
                     {
                         if (userService.GetSameEmail(NewUser.Email) == null)
                         {
-                            Switcher.Switch(new LogInAppView());
                             NewUser.Password = passwordBox.Password;
-                            userService.CreateOrUpdate(NewUser);   
+                            userService.CreateOrUpdate(NewUser);
+                            Switcher.Switch(new LogInAppView());
                         }
                         else Info = "*User with this email exists";
                     }
