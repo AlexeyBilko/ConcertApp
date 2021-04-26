@@ -68,7 +68,7 @@ namespace ConcertApp.UI.ViewModels
 
         public MainViewModel(UserDTO bu_dto)
         {
-            CurrentPage = new TestView();
+            //CurrentPage = new TestView();
 
             try
             {
