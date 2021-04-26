@@ -47,11 +47,15 @@
 
                                 <Image Source="{Binding Photo}" 
                                     Width="240"
-                                    Height="260"></Image>
+                                    Height="250"></Image>
+                                <Label Height="10"></Label>
                                 <TextBlock Text="{Binding Title}" FontWeight="Black" TextWrapping="WrapWithOverflow" 
                                            HorizontalAlignment="Center"
                                            FontSize="20"></TextBlock>
-
+                                <Label Height="10"></Label>
+                                <Button Style="{DynamicResource ButtonStyle1}"  Background="OrangeRed" Foreground="White" FontWeight="Bold" FontSize="15">
+                                    Order
+                                </Button>
                             </StackPanel>
                         </Grid>
                     </Border>
@@ -61,10 +65,10 @@
         </ListView>
 
         <StackPanel Orientation="Vertical">
-            <Border BorderThickness="7" Background="DarkGray" CornerRadius="30" Margin="0,40,0,0">
-                <Calendar Foreground="Red" Background="DarkGray" MaxWidth="200">
-                
-                   
+            <Border BorderThickness="7" BorderBrush="Red" CornerRadius="30" Margin="5,40,0,0">
+                <Calendar BorderThickness="0" Margin="10" Foreground="Red" Background="White" MaxWidth="200">
+
+
                 </Calendar>
             </Border>
 
