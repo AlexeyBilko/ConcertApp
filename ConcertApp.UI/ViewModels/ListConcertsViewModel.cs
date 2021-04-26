@@ -34,6 +34,18 @@ namespace ConcertApp.UI.ViewModels
             CreateCommands();
         }
 
+        private UserDTO selectedBankUser;
+
+        public UserDTO SelectedBankUser
+        {
+            get => selectedBankUser;
+            set
+            {
+                selectedBankUser = value;
+                NotifyPropertyChanged();
+            }
+        }
+
         private void CreateCommands()
         {
             GetConcertsCommand = new RelayCommand((param) => {
