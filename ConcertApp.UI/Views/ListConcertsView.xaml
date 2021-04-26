@@ -47,11 +47,15 @@
 
                                 <Image Source="{Binding Photo}" 
                                     Width="240"
-                                    Height="260"></Image>
+                                    Height="250"></Image>
+                                <Label Height="10"></Label>
                                 <TextBlock Text="{Binding Title}" FontWeight="Black" TextWrapping="WrapWithOverflow" 
                                            HorizontalAlignment="Center"
                                            FontSize="20"></TextBlock>
-
+                                <Label Height="10"></Label>
+                                <Button Style="{DynamicResource ButtonStyle1}"  Background="OrangeRed" Foreground="White" FontWeight="Bold" FontSize="15">
+                                    Order
+                                </Button>
                             </StackPanel>
                         </Grid>
                     </Border>
