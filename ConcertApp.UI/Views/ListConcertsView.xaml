@@ -40,7 +40,7 @@
 
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Border BorderBrush="Red" BorderThickness="6" CornerRadius="2">
+                    <Border BorderBrush="Red" BorderThickness="4" Margin="5" CornerRadius="2">
                         <Grid>
                             <StackPanel Margin="10" Grid.Row="0" MaxWidth="180">
 
@@ -61,8 +61,8 @@
         </ListView>
 
         <StackPanel Orientation="Vertical">
-            <Border BorderThickness="7" Background="DarkGray" CornerRadius="30" Margin="0,40,0,0">
-                <Calendar Foreground="Red" Background="DarkGray" MaxWidth="200">
+            <Border BorderThickness="7" BorderBrush="Red" CornerRadius="30" Margin="5,40,0,0">
+                <Calendar BorderThickness="0" Margin="10" Foreground="Red" Background="White" MaxWidth="200">
                 
                    
                 </Calendar>

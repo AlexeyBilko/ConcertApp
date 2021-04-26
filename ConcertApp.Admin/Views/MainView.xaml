@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ConcertApp.Admin"
         xmlns:vm="clr-namespace:ConcertApp.Admin.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="1000">
+        Title="Admin Panel [ConcertApp]" Height="445" Width="800">
     <Window.DataContext>
         <vm:MainViewModel></vm:MainViewModel>
     </Window.DataContext>
@@ -16,14 +16,35 @@
             <ColumnDefinition Width="4*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel>
-            <Button Command="{Binding ListEventCommand}">List Event</Button>
-            <Button Command="{Binding CreateConcertCommand}">Create event</Button>
-            <Button Command="{Binding RemoveConcertCommand}">Delete event</Button>
-            <Button Command="{Binding UpdateConcertCommand}">Update event</Button>
-            <Button Command="{Binding BanUserCommand}">Ban user</Button>
+
+            <Label Foreground="Red" FontFamily="Arial Black" Content="ConcertApp" FontSize="19" Margin="8"></Label>
+
+            <Border Background="Red" BorderThickness="8" Margin="5">
+                <Button Margin="1" Background="White" Height="35"  Command="{Binding ListEventCommand}">List Event</Button>
+            </Border>
+            <Border Background="Red" BorderThickness="8" Margin="5">
+                <Button Margin="1"  Background="White" Height="35"  Command="{Binding CreateConcertCommand}">Create event</Button>
+            </Border>
+            <Border Background="Red" BorderThickness="8" Margin="5">
+                <Button Margin="1"  Background="White" Height="35"  Command="{Binding RemoveConcertCommand}">Delete event</Button>
+            </Border>
+            <Border Background="Red" BorderThickness="8" Margin="5">
+                <Button Margin="1"  Background="White" Height="35"  Command="{Binding UpdateConcertCommand}">Update event</Button>
+            </Border>
+            <Border Background="Red" BorderThickness="8" Margin="5">
+                <Button Margin="1"  Background="White" Height="35" Command="{Binding BanUserCommand}">Ban user</Button>
+            </Border>
+
+            <Label Background="White" Height="10"></Label>
+            <Label Background="Red" Height="5"></Label>
+            <Label Background="White" Height="10"></Label>
+            <Label Background="Red" Height="5"></Label>
+
         </StackPanel>
-        <ContentControl Grid.Column="1" Content="{Binding CurrentPage}">
-            
-        </ContentControl>
+        <Border Grid.Column="1" BorderBrush="Red" BorderThickness="4" Margin="15">
+            <ContentControl Margin="5" Content="{Binding CurrentPage}">
+
+            </ContentControl>
+        </Border>
     </Grid>
 </Window>

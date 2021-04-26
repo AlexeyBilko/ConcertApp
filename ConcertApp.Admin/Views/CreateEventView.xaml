@@ -8,7 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800"
              DataContext="{Binding Source={StaticResource locator}, Path=CreateEventViewModel}">
     <Grid>
-        <StackPanel HorizontalAlignment="Center">
+        <StackPanel Margin="30"  HorizontalAlignment="Center">
             <DockPanel>
                 <Label Width="100">Title</Label>
                 <TextBox Width="200" Text="{Binding SelectedConcert.Title}"></TextBox>
@@ -42,7 +42,9 @@
                 <TextBox Width="200" Text="{Binding SelectedConcert.StartTime}"></TextBox>
             </DockPanel>
             <DockPanel Height="20"></DockPanel>
-            <Button Command="{Binding AddConcertCommand}">CREATE</Button>
+            <Border BorderBrush="Red" Width="200" BorderThickness="5" Margin="5">
+                <Button Background="White" Height="30" Margin="5" Command="{Binding AddConcertCommand}">CREATE</Button>
+            </Border>
         </StackPanel>
     </Grid>
 </UserControl>
