@@ -17,6 +17,6 @@ namespace ConcertApp.DAL.Context
         public string Address { get; set; }
         public string TypeOfEvent { get; set; }
 
-        public DateTime StartTime { get; set; }
+        public DateTime? StartTime { get; set; }
     }
 }
