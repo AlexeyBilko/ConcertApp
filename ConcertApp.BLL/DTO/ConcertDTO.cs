@@ -24,6 +24,6 @@ namespace ConcertApp.BLL.DTO
 
         public string TypeOfEvent { get; set; }
 
-        public DateTime StartTime { get; set; }
+        public DateTime? StartTime { get; set; }
     }
 }

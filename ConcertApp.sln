@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcertApp.DAL", "ConcertAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcertApp.BLL", "ConcertApp.BLL\ConcertApp.BLL.csproj", "{242504CE-CF2E-4418-8BC6-02DE33677528}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcertApp.Admin", "ConcertApp.Admin\ConcertApp.Admin.csproj", "{340F47BE-1B9A-4BF1-8CA8-A3B2409226FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{242504CE-CF2E-4418-8BC6-02DE33677528}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{242504CE-CF2E-4418-8BC6-02DE33677528}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{242504CE-CF2E-4418-8BC6-02DE33677528}.Release|Any CPU.Build.0 = Release|Any CPU
+		{340F47BE-1B9A-4BF1-8CA8-A3B2409226FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{340F47BE-1B9A-4BF1-8CA8-A3B2409226FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{340F47BE-1B9A-4BF1-8CA8-A3B2409226FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{340F47BE-1B9A-4BF1-8CA8-A3B2409226FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

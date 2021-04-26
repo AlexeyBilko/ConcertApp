@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="ConcertApp.Admin.Views.CreateEventView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ConcertApp.Admin.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             DataContext="{Binding Source={StaticResource locator}, Path=CreateEventViewModel}">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center">
+            <DockPanel>
+                <Label Width="100">Title</Label>
+                <TextBox Width="200" Text="{Binding SelectedConcert.Title}"></TextBox>
+            </DockPanel>
+            <DockPanel>
+                <Label Width="100">City</Label>
+                <TextBox Width="200" Text="{Binding SelectedConcert.City}"></TextBox>
+            </DockPanel>
+            <DockPanel>
+                <Label Width="100">Organizer</Label>
+                <TextBox Width="200" Text="{Binding SelectedConcert.Organizer}"></TextBox>
+            </DockPanel>
+            <DockPanel>
+                <Label Width="100">Photo URL</Label>
+                <TextBox Width="200" Text="{Binding SelectedConcert.Photo}"></TextBox>
+            </DockPanel>
+            <DockPanel>
+                <Label Width="100">Actors</Label>
+                <TextBox Width="200" Text="{Binding SelectedConcert.Actors}"></TextBox>
+            </DockPanel>
+            <DockPanel>
+                <Label Width="100">Address</Label>
+                <TextBox Width="200" Text="{Binding SelectedConcert.Address}"></TextBox>
+            </DockPanel>
+            <DockPanel>
+                <Label Width="100">TypeOfEvent</Label>
+                <TextBox Width="200" Text="{Binding SelectedConcert.TypeOfEvent}"></TextBox>
+            </DockPanel>
+            <DockPanel>
+                <Label Width="100">StartTime</Label>
+                <TextBox Width="200" Text="{Binding SelectedConcert.StartTime}"></TextBox>
+            </DockPanel>
+            <DockPanel Height="20"></DockPanel>
+            <Button Command="{Binding AddConcertCommand}">CREATE</Button>
+        </StackPanel>
+    </Grid>
+</UserControl>
