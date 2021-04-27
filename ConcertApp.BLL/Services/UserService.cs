@@ -22,6 +22,8 @@ namespace ConcertApp.BLL.Services
             {
                 x.CreateMap<Users, UserDTO>();
                 x.CreateMap<UserDTO, Users>();
+                x.CreateMap<Tickets, TicketDTO>();
+                x.CreateMap<TicketDTO, Tickets>();
             });
             mapper = new Mapper(config);
 

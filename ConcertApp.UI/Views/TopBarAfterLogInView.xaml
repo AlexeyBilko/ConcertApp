@@ -5,8 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ConcertApp.UI.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="90" d:DesignWidth="1000"
-             DataContext="{Binding Source={StaticResource locator}, Path=TopBarViewModel}">
+             d:DesignHeight="90" d:DesignWidth="710"
+             DataContext="{Binding Source={StaticResource locator}, Path=TopBarAfterLogInViewModel}">
+
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1.5*"></ColumnDefinition>

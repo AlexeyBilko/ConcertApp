@@ -75,8 +75,13 @@ namespace ConcertApp.UI.ViewModels
                         ListConcertsViewModel pvm = page.DataContext as ListConcertsViewModel;
                         pvm.InitUser(item.Id);
                         (Switcher.ContentArea as MainViewModel).SelectedBankUser = item;
-                        (Switcher.ContentArea as MainViewModel).CurrentTopPage = new TopBarAfterLogInView();
+
+
+                        TopBarAfterLogInView view = new TopBarAfterLogInView();
+                        (view.DataContext as TopBarAfterLogInViewModel).CurrentUser = item;
+                        (Switcher.ContentArea as MainViewModel).CurrentTopPage = view;
                         Switcher.Switch(page);
+						
                         break;
                     }
                 }
