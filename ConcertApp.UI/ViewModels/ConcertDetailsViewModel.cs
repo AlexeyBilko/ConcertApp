@@ -14,6 +14,18 @@ namespace ConcertApp.UI.ViewModels
 {
     public class ConcertDetailsViewModel : BaseNotifyPropertyChanged
     {
+        private UserDTO selectedUser;
+
+        public UserDTO SelectedUser
+        {
+            get => selectedUser;
+            set
+            {
+                selectedUser = value;
+                NotifyPropertyChanged();
+            }
+        }
+
         private ConcertDTO selectedEvent;
         public ConcertDTO SelectedEvent
         {
@@ -38,6 +50,21 @@ namespace ConcertApp.UI.ViewModels
             BackCommand = new RelayCommand((param) =>
             {
                 Switcher.Switch(new ListConcertsView());
+            });
+            OrderCommand = new RelayCommand((x) =>
+            {
+                if (SelectedUser == null)
+                {
+                    Switcher.Switch(new LogInAppView());
+                }
+                else
+                {
+                    CreateTicketView page = new CreateTicketView();
+                    CreateTicketViewModel ctvm = page.DataContext as CreateTicketViewModel;
+                    ctvm.SelectedConcert = SelectedEvent;
+                    ctvm.SelectedBankUser = SelectedUser;
+                    Switcher.Switch(page);
+                }
             });
         }
 

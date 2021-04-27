@@ -124,11 +124,12 @@ namespace ConcertApp.UI.ViewModels
                 ConcertDetailsView page = new ConcertDetailsView();
                 ConcertDetailsViewModel cdvm = page.DataContext as ConcertDetailsViewModel;
                 cdvm.InitConcert(SelectedConcert.Id);
+                cdvm.SelectedUser = this.SelectedUser;
                 Switcher.Switch(page);
             });
             OrderTicketCommand = new RelayCommand((x) =>
             {
-                if (SelectedBankUser == null)
+                if (SelectedUser == null)
                 {
                     Switcher.Switch(new LogInAppView());
                 }
@@ -137,7 +138,7 @@ namespace ConcertApp.UI.ViewModels
                     CreateTicketView page = new CreateTicketView();
                     CreateTicketViewModel ctvm = page.DataContext as CreateTicketViewModel;
                     ctvm.SelectedConcert = SelectedConcert;
-                    ctvm.SelectedBankUser = SelectedBankUser;
+                    ctvm.SelectedBankUser = SelectedUser;
                     Switcher.Switch(page);
                 }
             });
