@@ -47,16 +47,32 @@
             <Label FontFamily="Berlin Sans FB Demi" FontSize="19"  Grid.Row="2" Margin="521,141.6,-377,-131.2" Content="or"/>
         </Grid>
         <Grid Grid.Row="1">
-            <Button Command="{Binding LogInCommand}"  CommandParameter="{Binding ElementName=PasswordBox}" Background="#FF2E00" Margin="281,40,540,40" Height="40" Style="{DynamicResource ButtonStyle1}">
-                <Label Foreground="#efefef" FontFamily="Berlin Sans FB Demi" FontSize="22">Log in</Label>
+            <Button Command="{Binding LogInCommand}"  CommandParameter="{Binding ElementName=PasswordBox}" 
+                    Background="#FF2E00" Margin="281,40,540,40" 
+                    Height="40" 
+                    Style="{DynamicResource ButtonStyle1}"
+                    Template="{StaticResource StandartButton}">
+                <Label HorizontalAlignment="Center" VerticalAlignment="Center"
+                       Foreground="#efefef" 
+                       FontFamily="Berlin Sans FB Demi"
+                       FontSize="22">Log in</Label>
                 <Button.ToolTip>
                     <ToolTip>
                         Log I
                     </ToolTip>
                 </Button.ToolTip>
             </Button>
-            <Button Command="{Binding RegistrationCommand}" Background="DarkOrange" Height="40" Margin="603,40,264,40" Style="{DynamicResource ButtonStyle1}">
-                <Label Foreground="#efefef" FontFamily="Berlin Sans FB Demi" FontSize="22">Register</Label>
+            <Button Command="{Binding RegistrationCommand}" Background="DarkOrange" Height="40" 
+                    Margin="603,40,264,40" Style="{DynamicResource ButtonStyle1}"
+                    Template="{StaticResource StandartButton}"
+                   
+                    >
+                <Label 
+                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                       Foreground="#efefef" 
+                       FontFamily="Berlin Sans FB Demi"
+                       FontSize="22"
+                       >Registration</Label>
                 <Button.ToolTip>
                     <ToolTip>
                         Log I
