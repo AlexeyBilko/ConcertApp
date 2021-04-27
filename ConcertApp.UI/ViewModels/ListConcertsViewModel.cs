@@ -126,6 +126,21 @@ namespace ConcertApp.UI.ViewModels
                 cdvm.InitConcert(SelectedConcert.Id);
                 Switcher.Switch(page);
             });
+            OrderTicketCommand = new RelayCommand((x) =>
+            {
+                if (SelectedBankUser == null)
+                {
+                    Switcher.Switch(new LogInAppView());
+                }
+                else
+                {
+                    CreateTicketView page = new CreateTicketView();
+                    CreateTicketViewModel ctvm = page.DataContext as CreateTicketViewModel;
+                    ctvm.SelectedConcert = SelectedConcert;
+                    ctvm.SelectedBankUser = SelectedBankUser;
+                    Switcher.Switch(page);
+                }
+            });
         }
 
         public void SortByDate()
@@ -136,17 +151,7 @@ namespace ConcertApp.UI.ViewModels
                     return concert.StartTime.Value.Date == Date.Date;
                 })
             );
-            OrderTicketCommand = new RelayCommand((x) =>
-            {
-                if (SelectedBankUser==null)
-                {
-                    Switcher.Switch(new LogInAppView());
-                }
-                else
-                {
-
-                }
-            });
+            
         }
 
         public ICommand GetConcertsCommand { get;private set; }

@@ -26,6 +26,7 @@ namespace ConcertApp.UI.Infrastructure
         public ListConcertsViewModel ListConcertsViewModel => kernel.Get<ListConcertsViewModel>();
         public ConcertDetailsViewModel ConcertDetailsViewModel => kernel.Get<ConcertDetailsViewModel>();
 
+        
 
 
 
@@ -33,6 +34,9 @@ namespace ConcertApp.UI.Infrastructure
 
 
         public TicketsViewModel TicketsViewModel => kernel.Get<TicketsViewModel>();
+
+
+        public CreateTicketViewModel CreateTicketViewModel => kernel.Get<CreateTicketViewModel>();
 
     }
 }

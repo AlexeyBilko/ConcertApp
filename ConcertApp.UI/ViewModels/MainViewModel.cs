@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace ConcertApp.UI.ViewModels
 {
@@ -49,7 +50,6 @@ namespace ConcertApp.UI.ViewModels
                 NotifyPropertyChanged();
             }
         }
-
 
 
         public void InitCommands()
