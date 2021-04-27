@@ -86,7 +86,7 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsDefaulted" Value="true">
-                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.GradientActiveCaptionBrush}}"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="true">
                                 <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
@@ -105,6 +105,74 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
+          
         </Style>
+
+
+
+
+
+        <ControlTemplate x:Key="ButtonBurn" TargetType="Button">
+            <Border BorderBrush="Black" CornerRadius="10" Name="border"
+                    Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"
+                    TextBlock.TextAlignment="Center" Background="{TemplateBinding Background}" 
+                    TextBlock.Foreground="{TemplateBinding Foreground}" 
+                    TextBlock.FontFamily="{TemplateBinding FontFamily}"
+                    TextBlock.FontSize="{TemplateBinding FontSize}"
+                    >
+                <ContentPresenter RecognizesAccessKey="True">
+
+                    
+                    
+                </ContentPresenter>
+                
+            </Border>
+            
+            <ControlTemplate.Triggers>
+
+
+             
+
+                <EventTrigger RoutedEvent="Border.MouseMove">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Width" To="100"
+                                                         Duration="0:0:1.5" From="140">
+                                </DoubleAnimation>
+
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+
+
+                <EventTrigger RoutedEvent="Border.MouseLeave">
+                  <EventTrigger.Actions>
+                      <BeginStoryboard>
+                          <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Height" To="30"
+                                                         Duration="0:0:2" From="50">
+                                <DoubleAnimation.EasingFunction>
+                                    <ElasticEase EasingMode="EaseOut" Oscillations="4"></ElasticEase>
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+
+                          
+                          </Storyboard>
+                      </BeginStoryboard>
+                </EventTrigger.Actions>
+              </EventTrigger>
+
+                
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+
+
+
+
+
+
     </Application.Resources>
 </Application>
