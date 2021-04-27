@@ -39,11 +39,9 @@ namespace ConcertApp.UI.ViewModels
 
             GoBackCommand = new RelayCommand((param) =>
             {
-
                 ProfileView view = new ProfileView();
                 (view.DataContext as ProfileViewModel).CurrentUser = CurrentUser;
                 Switcher.Switch(view);
-
             });
         }
 

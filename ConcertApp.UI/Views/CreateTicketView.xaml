@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ConcertApp.UI.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
+             d:DesignHeight="550" d:DesignWidth="1000"
              DataContext="{Binding Source={StaticResource locator}, Path=CreateTicketViewModel}">
     <Grid Background="White">
         <Grid.ColumnDefinitions>
@@ -15,6 +15,7 @@
         <StackPanel Width="330">
             <Label Height="20"></Label>
             <Label Height="40" Foreground="Red" FontWeight="Bold" FontSize="20" HorizontalAlignment="Center">Concert Info</Label>
+            <Label Height="20"></Label>
             <DockPanel>
                 <Label HorizontalAlignment="Left" FontWeight="DemiBold" FontSize="16">Title</Label>
                 <TextBox Text="{Binding SelectedConcert.Title}" IsReadOnly="True" HorizontalAlignment="Right" Width="200" Margin="5"></TextBox>
@@ -43,18 +44,21 @@
                 <Label HorizontalAlignment="Left" FontWeight="DemiBold" FontSize="16">Start Time</Label>
                 <TextBox Text="{Binding SelectedConcert.StartTime}" IsReadOnly="True" HorizontalAlignment="Right" Width="200" Margin="5"></TextBox>
             </DockPanel>
+            <Button Command="{Binding GoBackCommand}" Background="White" Width="100" Height="60" Margin="30">Back</Button>
         </StackPanel>
         <StackPanel Grid.Column="1">
             <Label Height="20"></Label>
-            <Image Width="240" Height="250" Source="{Binding SelectedConcert.Photo}">
-                
-            </Image>
+            <Border BorderBrush="Red" Width="260" BorderThickness="5" Margin="10">
+                <Image Width="240" Height="250" Source="{Binding SelectedConcert.Photo}">
+
+                </Image>
+            </Border>
             <Label Height="20">
 
             </Label>
             <DockPanel>
-                <Label FontSize="14">Which type of ticket?</Label>
-                <ComboBox Margin="5" HorizontalAlignment="Right" Text="{Binding TypeOfTicket}" Width="120">
+                <Label FontSize="14" Width="144">           Which type of ticket?</Label>
+                <ComboBox Margin="5" HorizontalAlignment="Center" Text="{Binding TypeOfTicket}" Width="120">
                     <ComboBoxItem Content="VIP"/>
                     <ComboBoxItem Content="Standart"/>
                 </ComboBox>
@@ -84,6 +88,7 @@
                 </ComboBox>
             </DockPanel>
             <Label Height="25"></Label>
+            <Label Height="20"></Label>
             <Button Style="{DynamicResource ButtonStyle1}" Command="{Binding ConfirmCommand}" Width="150" Height="30" Background="OrangeRed" Foreground="White" FontWeight="Bold">Confirm</Button>
         </StackPanel>
     </Grid>

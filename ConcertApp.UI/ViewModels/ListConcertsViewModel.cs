@@ -124,6 +124,7 @@ namespace ConcertApp.UI.ViewModels
                 ConcertDetailsView page = new ConcertDetailsView();
                 ConcertDetailsViewModel cdvm = page.DataContext as ConcertDetailsViewModel;
                 cdvm.InitConcert(SelectedConcert.Id);
+                //cdvm.InitUser(SelectedUser.Id);
                 cdvm.SelectedUser = this.SelectedUser;
                 Switcher.Switch(page);
             });
@@ -138,7 +139,7 @@ namespace ConcertApp.UI.ViewModels
                     CreateTicketView page = new CreateTicketView();
                     CreateTicketViewModel ctvm = page.DataContext as CreateTicketViewModel;
                     ctvm.SelectedConcert = SelectedConcert;
-                    ctvm.SelectedBankUser = SelectedUser;
+                    ctvm.SelectedUser = SelectedUser;
                     Switcher.Switch(page);
                 }
             });
