@@ -1,0 +1,90 @@
+﻿<UserControl x:Class="ConcertApp.UI.Views.CreateTicketView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ConcertApp.UI.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             DataContext="{Binding Source={StaticResource locator}, Path=CreateTicketViewModel}">
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Width="330">
+            <Label Height="20"></Label>
+            <Label Height="40" Foreground="Red" FontWeight="Bold" FontSize="20" HorizontalAlignment="Center">Concert Info</Label>
+            <DockPanel>
+                <Label HorizontalAlignment="Left" FontWeight="DemiBold" FontSize="16">Title</Label>
+                <TextBox Text="{Binding SelectedConcert.Title}" IsReadOnly="True" HorizontalAlignment="Right" Width="200" Margin="5"></TextBox>
+            </DockPanel>
+            <DockPanel>
+                <Label HorizontalAlignment="Left" FontWeight="DemiBold" FontSize="16">City</Label>
+                <TextBox Text="{Binding SelectedConcert.City}" IsReadOnly="True" HorizontalAlignment="Right" Width="200" Margin="5"></TextBox>
+            </DockPanel>
+            <DockPanel>
+                <Label HorizontalAlignment="Left" FontWeight="DemiBold" FontSize="16">Organizer</Label>
+                <TextBox Text="{Binding SelectedConcert.Organizer}" IsReadOnly="True" HorizontalAlignment="Right" Width="200" Margin="5"></TextBox>
+            </DockPanel>
+            <DockPanel>
+                <Label HorizontalAlignment="Left" FontWeight="DemiBold" FontSize="16">Actors</Label>
+                <TextBox Text="{Binding SelectedConcert.Actors}" IsReadOnly="True" HorizontalAlignment="Right" Width="200" Margin="5"></TextBox>
+            </DockPanel>
+            <DockPanel>
+                <Label HorizontalAlignment="Left" FontWeight="DemiBold" FontSize="16">Address</Label>
+                <TextBox Text="{Binding SelectedConcert.Address}" IsReadOnly="True" HorizontalAlignment="Right" Width="200" Margin="5"></TextBox>
+            </DockPanel>
+            <DockPanel>
+                <Label HorizontalAlignment="Left" FontWeight="DemiBold" FontSize="16">Type Of Event</Label>
+                <TextBox Text="{Binding SelectedConcert.TypeOfEvent}" IsReadOnly="True" HorizontalAlignment="Right" Width="200" Margin="5"></TextBox>
+            </DockPanel>
+            <DockPanel>
+                <Label HorizontalAlignment="Left" FontWeight="DemiBold" FontSize="16">Start Time</Label>
+                <TextBox Text="{Binding SelectedConcert.StartTime}" IsReadOnly="True" HorizontalAlignment="Right" Width="200" Margin="5"></TextBox>
+            </DockPanel>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <Label Height="20"></Label>
+            <Image Width="240" Height="250" Source="{Binding SelectedConcert.Photo}">
+                
+            </Image>
+            <Label Height="20">
+
+            </Label>
+            <DockPanel>
+                <Label FontSize="14">Which type of ticket?</Label>
+                <ComboBox Margin="5" HorizontalAlignment="Right" Text="{Binding TypeOfTicket}" Width="120">
+                    <ComboBoxItem Content="VIP"/>
+                    <ComboBoxItem Content="Standart"/>
+                </ComboBox>
+            </DockPanel>
+            <DockPanel>
+                <Label Width="40"></Label>
+                <Label FontSize="14">Row</Label>
+                <ComboBox Margin="5" Text="{Binding Row}" HorizontalAlignment="Right" Width="120">
+                    <ComboBoxItem>1</ComboBoxItem>
+                    <ComboBoxItem>2</ComboBoxItem>
+                    <ComboBoxItem>3</ComboBoxItem>
+                    <ComboBoxItem>4</ComboBoxItem>
+                    <ComboBoxItem>5</ComboBoxItem>
+                </ComboBox>
+                <Label FontSize="14">Place</Label>
+                <ComboBox Margin="5" Text="{Binding Place}" HorizontalAlignment="Left" Width="120">
+                    <ComboBoxItem>1</ComboBoxItem>
+                    <ComboBoxItem>2</ComboBoxItem>
+                    <ComboBoxItem>3</ComboBoxItem>
+                    <ComboBoxItem>4</ComboBoxItem>
+                    <ComboBoxItem>5</ComboBoxItem>
+                    <ComboBoxItem>6</ComboBoxItem>
+                    <ComboBoxItem>7</ComboBoxItem>
+                    <ComboBoxItem>8</ComboBoxItem>
+                    <ComboBoxItem>9</ComboBoxItem>
+                    <ComboBoxItem>10</ComboBoxItem>
+                </ComboBox>
+            </DockPanel>
+            <Label Height="25"></Label>
+            <Button Style="{DynamicResource ButtonStyle1}" Command="{Binding ConfirmCommand}" Width="150" Height="30" Background="OrangeRed" Foreground="White" FontWeight="Bold">Confirm</Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

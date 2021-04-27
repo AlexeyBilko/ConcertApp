@@ -57,9 +57,11 @@
                                            HorizontalAlignment="Center"
                                            FontSize="20"></TextBlock>
                                 <Label Height="10"></Label>
-                                <Button Style="{DynamicResource ButtonStyle1}"  Background="OrangeRed" Foreground="White" Height="30" FontWeight="Bold" FontSize="15">
-                                    Order
-                                </Button>
+                                <DockPanel>
+                                    <Button Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=DataContext.OrderTicketCommand}" Width="82" HorizontalAlignment="Left"  Style="{DynamicResource ButtonStyle1}"  Background="OrangeRed" Foreground="White" Height="30" FontWeight="Bold" FontSize="15">
+                                        Order
+                                    </Button>
+                                </DockPanel>
                             </StackPanel>
                         </Grid>
                     </Border>
