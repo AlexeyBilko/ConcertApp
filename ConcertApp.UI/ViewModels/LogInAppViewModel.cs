@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace ConcertApp.UI.ViewModels
@@ -58,36 +59,37 @@ namespace ConcertApp.UI.ViewModels
         {
             userService = us;
             Users = new ObservableCollection<UserDTO>(userService.GetAll());
+            LogInCommand = new RelayCommand(LogIn);
             InitCommands();
         }
 
         public void InitCommands()
         {
-            LogInCommand = new RelayCommand(param =>
-            {
-                bool isRight = false;
-                foreach (var item in Users)
-                {
-                    if (item.Password == Password && item.Email == Email)
-                    {
-                        isRight = true;
-                        ListConcertsView page = new ListConcertsView();
-                        ListConcertsViewModel pvm = page.DataContext as ListConcertsViewModel;
-                        pvm.InitUser(item.Id);
-                        (Switcher.ContentArea as MainViewModel).SelectedBankUser = item;
+            //LogInCommand = new RelayCommand(param =>
+            //{
+                //bool isRight = false;
+                //foreach (var item in Users)
+                //{
+                //    if (item.Password == Password && item.Email == Email)
+                //    {
+                //        isRight = true;
+                //        ListConcertsView page = new ListConcertsView();
+                //        ListConcertsViewModel pvm = page.DataContext as ListConcertsViewModel;
+                //        pvm.InitUser(item.Id);
+                //        (Switcher.ContentArea as MainViewModel).SelectedBankUser = item;
 
 
-                        TopBarAfterLogInView view = new TopBarAfterLogInView();
-                        (view.DataContext as TopBarAfterLogInViewModel).CurrentUser = item;
-                        (Switcher.ContentArea as MainViewModel).CurrentTopPage = view;
-                        Switcher.Switch(page);
+                //        TopBarAfterLogInView view = new TopBarAfterLogInView();
+                //        (view.DataContext as TopBarAfterLogInViewModel).CurrentUser = item;
+                //        (Switcher.ContentArea as MainViewModel).CurrentTopPage = view;
+                //        Switcher.Switch(page);
 						
-                        break;
-                    }
-                }
-                if (isRight == false)
-                    MessageBox.Show("Incorrect email or password");
-            });
+                //        break;
+                //    }
+                //}
+                //if (isRight == false)
+                //    MessageBox.Show("Incorrect email or password");
+            //});
             RegistrationCommand = new RelayCommand((param) => {
                 
                 Switcher.Switch(new RegistartionView()); 
@@ -97,6 +99,33 @@ namespace ConcertApp.UI.ViewModels
             {
                 Switcher.Switch(new ListConcertsView());
             });
+        }
+
+        private void LogIn(object param)
+        {
+            var passwordBox = param as PasswordBox;
+            bool isRight = false;
+            foreach (var item in Users)
+            {
+                if (item.Password == passwordBox.Password && item.Email == Email)
+                {
+                    isRight = true;
+                    ListConcertsView page = new ListConcertsView();
+                    ListConcertsViewModel pvm = page.DataContext as ListConcertsViewModel;
+                    pvm.InitUser(item.Id);
+                    (Switcher.ContentArea as MainViewModel).SelectedBankUser = item;
+
+
+                    TopBarAfterLogInView view = new TopBarAfterLogInView();
+                    (view.DataContext as TopBarAfterLogInViewModel).CurrentUser = item;
+                    (Switcher.ContentArea as MainViewModel).CurrentTopPage = view;
+                    Switcher.Switch(page);
+
+                    break;
+                }
+            }
+            if (isRight == false)
+                MessageBox.Show("Incorrect email or password");
         }
 
         public ICommand LogInCommand { get; private set; }
