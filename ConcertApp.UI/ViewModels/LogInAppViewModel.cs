@@ -93,6 +93,10 @@ namespace ConcertApp.UI.ViewModels
                 Switcher.Switch(new RegistartionView()); 
             
             });
+            BackCommand = new RelayCommand((param) =>
+            {
+                Switcher.Switch(new ListConcertsView());
+            });
         }
 
         public ICommand LogInCommand { get; private set; }
@@ -103,5 +107,6 @@ namespace ConcertApp.UI.ViewModels
         }
 
         public ICommand RegistrationCommand { get; private set; }
+        public ICommand BackCommand { get; private set; }
     }
 }

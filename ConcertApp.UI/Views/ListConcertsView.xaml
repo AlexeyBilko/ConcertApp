@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ConcertApp.UI.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
+             d:DesignHeight="450" d:DesignWidth="1000"
              DataContext="{Binding Source={StaticResource locator}, Path=ListConcertsViewModel}">
 
     <UserControl.Resources>
@@ -20,7 +20,7 @@
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.36*"></ColumnDefinition>
+            <ColumnDefinition Width="0.35*"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <ListView 
@@ -43,7 +43,11 @@
                     <Border BorderBrush="Red" BorderThickness="4" Margin="5" CornerRadius="2">
                         <Grid>
                             <StackPanel Margin="10" Grid.Row="0" MaxWidth="180">
-
+                                <StackPanel.InputBindings>
+                                    <MouseBinding Gesture="LeftClick" Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl, Mode=FindAncestor},Path=DataContext.ViewDetailCommand}">
+                                        
+                                    </MouseBinding>
+                                </StackPanel.InputBindings>
 
                                 <Image Source="{Binding Photo}" 
                                     Width="240"
@@ -64,41 +68,41 @@
 
         </ListView>
         <StackPanel Orientation="Vertical">
-            <Border BorderThickness="6" BorderBrush="Red" CornerRadius="30" Margin="5,40,0,0">
+            <Border BorderThickness="3" BorderBrush="Red" CornerRadius="30" Margin="5,40,0,0">
                 <Calendar SelectedDate="{Binding Date}" BorderThickness="0" Margin="10" Foreground="Red" Background="White" MaxWidth="200">
 
 
                 </Calendar>
             </Border>
 
-            <Label Background="White" Height="20"></Label>
+            <Label Background="White" Height="35"></Label>
             
-            <Border BorderThickness="6" BorderBrush="Red" CornerRadius="15" Margin="5">
-                <Button FontSize="18"
+            <Border BorderThickness="3" BorderBrush="Red" CornerRadius="15" Margin="5">
+                <Button BorderThickness="0"  FontSize="18"
                     HorizontalAlignment="Center" FontWeight="DemiBold" 
                     Foreground="Red" Background="White" BorderBrush="White" 
                     Command="{Binding GetConcertsCommand}"
                     >Concert</Button>
             </Border>
-            <Border BorderThickness="6" BorderBrush="Red" CornerRadius="15" Margin="5">
+            <Border BorderThickness="3" BorderBrush="Red" CornerRadius="15" Margin="5">
 
-                <Button 
+                <Button BorderThickness="0" 
                 FontSize="18" HorizontalAlignment="Center" 
                 FontWeight="DemiBold" Foreground="Red" 
                 Background="White" BorderBrush="White"
                 Command="{Binding GetTheatreCommand}">Theatre</Button>
             </Border>
-            <Border BorderThickness="6" BorderBrush="Red" CornerRadius="15" Margin="5">
+            <Border BorderThickness="3" BorderBrush="Red" CornerRadius="15" Margin="5">
 
-                <Button FontSize="18" HorizontalAlignment="Center" 
+                <Button BorderThickness="0"  FontSize="18" HorizontalAlignment="Center" 
                     FontWeight="DemiBold"
                     Foreground="Red" Background="White" 
                     BorderBrush="White"
                     Command="{Binding GetFestivalsCommand}">Festival</Button>
             </Border>
-            <Border BorderThickness="6" BorderBrush="Red" CornerRadius="15" Margin="5">
+            <Border BorderThickness="3" BorderBrush="Red" CornerRadius="15" Margin="5">
 
-                <Button FontSize="18" HorizontalAlignment="Center" 
+                <Button BorderThickness="0"  FontSize="18" HorizontalAlignment="Center" 
                     FontWeight="DemiBold"
                     Foreground="Red" Background="White" 
                     BorderBrush="White"
@@ -106,7 +110,7 @@
             </Border>
 
             <Label Background="White" Height="20"></Label>
-            <Button FontSize="15" HorizontalAlignment="Center" 
+            <Button BorderThickness="0"  FontSize="15" HorizontalAlignment="Center" 
                     FontWeight="DemiBold"
                     Foreground="Red" Background="White" 
                     BorderBrush="White"

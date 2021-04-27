@@ -38,14 +38,14 @@ namespace ConcertApp.UI.ViewModels
             CreateCommands();
         }
 
-        private UserDTO selectedBankUser;
+        private UserDTO selectedUser;
 
-        public UserDTO SelectedBankUser
+        public UserDTO SelectedUser
         {
-            get => selectedBankUser;
+            get => selectedUser;
             set
             {
-                selectedBankUser = value;
+                selectedUser = value;
                 NotifyPropertyChanged();
             }
         }
@@ -119,6 +119,13 @@ namespace ConcertApp.UI.ViewModels
             {
                 Concerts = new ObservableCollection<ConcertDTO>(concertService.GetAll());
             });
+            ViewDetailCommand = new RelayCommand((param) =>
+            {
+                ConcertDetailsView page = new ConcertDetailsView();
+                ConcertDetailsViewModel cdvm = page.DataContext as ConcertDetailsViewModel;
+                cdvm.InitConcert(SelectedConcert.Id);
+                Switcher.Switch(page);
+            });
         }
 
         public void SortByDate()
@@ -147,12 +154,13 @@ namespace ConcertApp.UI.ViewModels
         public ICommand GetFestivalsCommand { get; private set; }
         public ICommand GetHumorCommand { get; private set; }
         public ICommand RefreshCommand { get; private set; }
+        public ICommand ViewDetailCommand { get; private set; }
 
         public ICommand OrderTicketCommand { get; private set; }
 
         public void InitUser(int userId)
         {
-            SelectedBankUser = userService.Get(userId);
+            SelectedUser = userService.Get(userId);
         }
     }
 }

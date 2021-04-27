@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ConcertApp.UI.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="385" d:DesignWidth="710"
+             d:DesignHeight="385" d:DesignWidth="1000"
              DataContext="{Binding Source={StaticResource locator}, Path=ProfileViewModel}">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -18,8 +18,10 @@
             <RowDefinition Height="4*"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-
-        <Grid Grid.Column="1" Grid.Row="1">
+        <Label Grid.Column="0"  Foreground="Red" Margin="0,20,0,0" FontFamily="Arial Black" FontSize="25">-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --</Label>
+        <Label Grid.Column="1" Foreground="Red" Margin="0,20,0,0" FontFamily="Arial Black" FontSize="25">-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --</Label>
+        <Label Grid.Column="2"  Foreground="Red" Margin="0,20,0,0" FontFamily="Arial Black" FontSize="25">-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --</Label>
+        <Grid Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Margin="45.4,0,250,63.8" Grid.RowSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"></RowDefinition>
                 <RowDefinition Height="4*"></RowDefinition>
@@ -41,18 +43,19 @@
                     </StackPanel>
 
                     <StackPanel Grid.Column="1">
-                        <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" Text="{Binding CurrentUser.Name}" HorizontalAlignment="Right"></TextBlock>
-                        <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" Text="{Binding CurrentUser.Surname}" HorizontalAlignment="Right"></TextBlock>
-                        <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" Text="{Binding CurrentUser.Email}" HorizontalAlignment="Right"></TextBlock>
-                        <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" Text="{Binding CurrentUser.NumberPhone}" HorizontalAlignment="Right"></TextBlock>
-                        <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" Text="{Binding CurrentUser.Password}" HorizontalAlignment="Right"></TextBlock>
-                        <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" Text="{Binding CurrentUser.Tickets.Count}" HorizontalAlignment="Right"></TextBlock>
+                        <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" Text="{Binding CurrentUser.Name}" HorizontalAlignment="Left"></TextBlock>
+                        <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" Text="{Binding CurrentUser.Surname}" HorizontalAlignment="Left"></TextBlock>
+                        <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" Text="{Binding CurrentUser.Email}" HorizontalAlignment="Left"></TextBlock>
+                        <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" Text="{Binding CurrentUser.NumberPhone}" HorizontalAlignment="Left"></TextBlock>
+                        <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" Text="{Binding CurrentUser.Password}" HorizontalAlignment="Left"></TextBlock>
+                        <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" Text="{Binding CurrentUser.Tickets.Count}" HorizontalAlignment="Left"></TextBlock>
                     </StackPanel>
                 </Grid>
                 
             </StackPanel>
         </Grid>
         <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+            <Label Width="100"></Label>
             <Button  
                 Style="{StaticResource ButtonStyle1}" Width="120" 
                 Height="50" Command="{Binding WatchingTickets}"
@@ -66,7 +69,7 @@
                 FontFamily="Berlin Sans FB Demi" FontSize="20" Foreground="White" Background="DodgerBlue">Exit</Button>
         </StackPanel>
 
-        <Button Grid.Column="0" Grid.Row="1" Foreground="Black" Background="White" BorderBrush="White" Height="60" FontSize="15" FontWeight="Bold"
+        <Button Width="100" Foreground="Red" Grid.Column="0" Grid.Row="1" Background="White" BorderBrush="White" Height="60" FontSize="15" FontWeight="Bold"
                 Command="{Binding GoBackCommand}">
             BACK
         </Button>

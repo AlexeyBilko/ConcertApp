@@ -24,7 +24,7 @@ namespace ConcertApp.UI.Infrastructure
         public ProfileViewModel ProfileViewModel => kernel.Get<ProfileViewModel>();
 
         public ListConcertsViewModel ListConcertsViewModel => kernel.Get<ListConcertsViewModel>();
-
+        public ConcertDetailsViewModel ConcertDetailsViewModel => kernel.Get<ConcertDetailsViewModel>();
 
 
 

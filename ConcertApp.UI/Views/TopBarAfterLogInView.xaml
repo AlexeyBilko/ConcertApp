@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ConcertApp.UI.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="90" d:DesignWidth="710"
+             d:DesignHeight="90" d:DesignWidth="1000"
              DataContext="{Binding Source={StaticResource locator}, Path=TopBarAfterLogInViewModel}">
 
 
@@ -38,7 +38,7 @@
             </Button>
         </StackPanel>
 
-        <Button Grid.Column="2" Command="{Binding ProfileCommand}" Background="DarkOrange" Height="40" Width="80" Margin="10" Style="{DynamicResource ButtonStyle1}">
+        <Button BorderBrush="DarkOrange"  Grid.Column="2" Command="{Binding ProfileCommand}" Background="DarkOrange" Height="40" Width="80" Margin="10" Style="{DynamicResource ButtonStyle1}">
             <Label Foreground="#efefef" FontFamily="Berlin Sans FB Demi" FontSize="22">Profile</Label>
             <Button.ToolTip>
                 <ToolTip>

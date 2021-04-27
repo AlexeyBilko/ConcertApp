@@ -77,6 +77,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Infrastructure\ViewModelLocator.cs" />
+    <Compile Include="ViewModels\ConcertDetailsViewModel.cs" />
     <Compile Include="ViewModels\ListConcertsViewModel.cs" />
     <Compile Include="ViewModels\LogInAppViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
@@ -87,10 +88,11 @@
     <Compile Include="ViewModels\ProfileViewModel.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
     <Compile Include="ViewModels\TicketsViewModel.cs" />
-
-
     <Compile Include="ViewModels\TopBarAfterLogInViewModel.cs" />
     <Compile Include="ViewModels\TopBarViewModel.cs" />
+    <Compile Include="Views\ConcertDetailsView.xaml.cs">
+      <DependentUpon>ConcertDetailsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ListConcertsView.xaml.cs">
       <DependentUpon>ListConcertsView.xaml</DependentUpon>
     </Compile>
@@ -106,14 +108,9 @@
     <Compile Include="Views\RegistrationView.xaml.cs">
       <DependentUpon>RegistrationView.xaml</DependentUpon>
     </Compile>
-
-
-  
     <Compile Include="Views\TicketsView.xaml.cs">
       <DependentUpon>TicketsView.xaml</DependentUpon>
     </Compile>
-
-
     <Compile Include="Views\TopBarAfterLogInView.xaml.cs">
       <DependentUpon>TopBarAfterLogInView.xaml</DependentUpon>
     </Compile>
@@ -162,6 +159,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\ConcertDetailsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ListConcertsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -182,15 +183,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-
-
-   
     <Page Include="Views\TicketsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-
-
     <Page Include="Views\TopBarAfterLogInView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
