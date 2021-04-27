@@ -61,7 +61,7 @@ namespace ConcertApp.UI.ViewModels
         {
             currentTopPage = new TopBarView();
 
-            CurrentPage = new LogInAppView();
+            CurrentPage = new ListConcertsView();
             InitCommands();
             Switcher.ContentArea = this;
         }

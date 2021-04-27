@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="ConcertApp.UI.Views.ConcertDetailsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ConcertApp.UI.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="1000"
+             DataContext="{Binding Source={StaticResource locator}, Path=ConcertDetailsViewModel}">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Foreground="Red" Margin="0,20,0,0" FontFamily="Arial Black" FontSize="25">-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --</Label>
+        <StackPanel Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border BorderBrush="Red" Width="260" BorderThickness="5" Margin="10">
+                    <Image Grid.Column="0" Source="{Binding SelectedEvent.Photo}" 
+                                    Width="240"
+                                    Height="300"></Image>
+                </Border>
+                <StackPanel Grid.Column="1">
+                    <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" HorizontalAlignment="Left">Event Title</TextBlock>
+                    <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" HorizontalAlignment="Left">Event Type</TextBlock>
+                    <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" HorizontalAlignment="Left">City where held:</TextBlock>
+                    <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" HorizontalAlignment="Left">Event Organizer:</TextBlock>
+                    <TextBlock FontSize="21" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" HorizontalAlignment="Left">Actors:</TextBlock>
+                    <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" HorizontalAlignment="Left">Adress:</TextBlock>
+                    <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" HorizontalAlignment="Left">Date and Time:</TextBlock>
+                </StackPanel>
+
+                <StackPanel HorizontalAlignment="Left" Grid.Column="2">
+                    <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" Text="{Binding SelectedEvent.Title}" HorizontalAlignment="Left"></TextBlock>
+                    <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" Text="{Binding SelectedEvent.TypeOfEvent}" HorizontalAlignment="Left"></TextBlock>
+                    <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" Text="{Binding SelectedEvent.City}" HorizontalAlignment="Left"></TextBlock>
+                    <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" Text="{Binding SelectedEvent.Organizer}" HorizontalAlignment="Left"></TextBlock>
+                    <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" Text="{Binding SelectedEvent.Actors}" HorizontalAlignment="Left"></TextBlock>
+                    <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" Text="{Binding SelectedEvent.Address}" HorizontalAlignment="Left"></TextBlock>
+                    <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" Text="{Binding SelectedEvent.StartTime}" HorizontalAlignment="Left"></TextBlock>
+                </StackPanel>
+            </Grid>
+
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+            <Label Width="350"></Label>
+            <Button  
+                Style="{StaticResource ButtonStyle1}" Width="120" 
+                Height="50" Command="{Binding OrderCommand}"
+                FontFamily="Berlin Sans FB Demi" FontSize="20" 
+                Foreground="White" Background="DarkRed">Order</Button>
+
+            <Button  
+                Style="{StaticResource ButtonStyle1}" Width="120" 
+                Height="50" Margin="40,0,0,0" 
+                Command="{Binding BackCommand}"
+                FontFamily="Berlin Sans FB Demi" FontSize="20" Foreground="White" Background="DodgerBlue">Back</Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

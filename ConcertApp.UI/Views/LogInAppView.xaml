@@ -6,13 +6,13 @@
              xmlns:local="clr-namespace:ConcertApp.UI.Views"
              xmlns:vm="clr-namespace:ConcertApp.UI.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="385" d:DesignWidth="1000"
+             d:DesignHeight="550" d:DesignWidth="1000"
              DataContext="{Binding Source={StaticResource locator}, Path=LogInAppViewModel}">
     <Grid Background="#EFEFEF">
         <Grid.RowDefinitions>
             <RowDefinition Height="200"></RowDefinition>
+            <RowDefinition Height="180"></RowDefinition>
             <RowDefinition Height="120"></RowDefinition>
-            <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Grid.RowDefinitions>
@@ -38,7 +38,7 @@
                     </ToolTip>
                 </TextBox.ToolTip>
             </TextBox>
-            <Label FontFamily="Berlin Sans FB Demi" FontSize="19"  Grid.Row="2" Margin="527,111.4,-383,-101" Content="or"/>
+            <Label FontFamily="Berlin Sans FB Demi" FontSize="19"  Grid.Row="2" Margin="521,141.6,-377,-131.2" Content="or"/>
         </Grid>
         <Grid Grid.Row="1">
             <Button Command="{Binding LogInCommand}" Background="#FF2E00" Margin="281,40,540,40" Height="40" Style="{DynamicResource ButtonStyle1}">
@@ -58,5 +58,6 @@
                 </Button.ToolTip>
             </Button>
         </Grid>
+        <Button BorderThickness="0" Grid.Row="2" Height="100" Width="200" Background="#EFEFEF" FontFamily="Arial Black" FontSize="20" Command="{Binding BackCommand}">Back</Button>
     </Grid>
 </UserControl>
