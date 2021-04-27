@@ -53,7 +53,7 @@
                                            HorizontalAlignment="Center"
                                            FontSize="20"></TextBlock>
                                 <Label Height="10"></Label>
-                                <Button Style="{DynamicResource ButtonStyle1}"  Background="OrangeRed" Foreground="White" Height="30" FontWeight="Bold" FontSize="15">
+                                <Button Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Path=DataContext.OrderConcertCommand}" Style="{DynamicResource ButtonStyle1}"  Background="OrangeRed" Foreground="White" Height="30" FontWeight="Bold" FontSize="15">
                                     Order
                                 </Button>
                             </StackPanel>

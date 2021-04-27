@@ -1,6 +1,7 @@
 ﻿using ConcertApp.BLL.DTO;
 using ConcertApp.BLL.Services;
 using ConcertApp.UI.Infrastructure;
+using ConcertApp.UI.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -128,6 +129,17 @@ namespace ConcertApp.UI.ViewModels
                     return concert.StartTime.Value.Date == Date.Date;
                 })
             );
+            OrderTicketCommand = new RelayCommand((x) =>
+            {
+                if (SelectedBankUser==null)
+                {
+                    Switcher.Switch(new LogInAppView());
+                }
+                else
+                {
+
+                }
+            });
         }
 
         public ICommand GetConcertsCommand { get;private set; }
@@ -135,6 +147,8 @@ namespace ConcertApp.UI.ViewModels
         public ICommand GetFestivalsCommand { get; private set; }
         public ICommand GetHumorCommand { get; private set; }
         public ICommand RefreshCommand { get; private set; }
+
+        public ICommand OrderTicketCommand { get; private set; }
 
         public void InitUser(int userId)
         {
