@@ -90,6 +90,25 @@ namespace ConcertApp.UI.ViewModels
         {
             service = s;
             Count = "";
+            Task t = new Task(InitCommand);
+            t.Start();
+
+            GoBackCommand = new RelayCommand((param) =>
+            {
+                if (SelectedUser == null)
+                    Switcher.Switch(new ListConcertsView());
+                else
+                {
+                    ListConcertsView page = new ListConcertsView();
+                    ListConcertsViewModel lvm = page.DataContext as ListConcertsViewModel;
+                    lvm.SelectedUser = SelectedUser;
+                    Switcher.Switch(page);
+                }
+            });
+        }
+
+        private void InitCommand()
+        {
 
             ConfirmCommand = new RelayCommand(x =>
             {
@@ -113,14 +132,16 @@ namespace ConcertApp.UI.ViewModels
                             }
                             else
                             {
+                                int place_ = Place;
                                 List<TicketDTO> list = new List<TicketDTO>();
                                 for (int i = 0; i < int.Parse(Count); i++)
                                 {
                                     TicketDTO tmp = new TicketDTO();
                                     tmp.ConcertId = SelectedConcert.Id;
                                     tmp.UserId = SelectedUser.Id;
-                                    tmp.Row = this.Row;
-                                    tmp.Place = this.Place;
+                                    tmp.Row = Row;
+                                    
+                                    tmp.Place = place_++;
                                     tmp.Type = this.TypeOfTicket;
                                     if (tmp.Type == "VIP")
                                     {
@@ -141,7 +162,6 @@ namespace ConcertApp.UI.ViewModels
                                 MailAddress from = new MailAddress("concertapp.notificationmail@gmail.com");
 
                                 MailAddress to = new MailAddress(SelectedUser.Email);
-
                                 using (MailMessage m = new MailMessage(from, to))
                                 {
                                     using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
@@ -184,22 +204,10 @@ namespace ConcertApp.UI.ViewModels
                     }
                 }
                 else Switcher.Switch(new LogInAppView());
-                
-            });
 
-            GoBackCommand = new RelayCommand((param) =>
-            {
-                if (SelectedUser == null)
-                    Switcher.Switch(new ListConcertsView());
-                else
-                {
-                    ListConcertsView page = new ListConcertsView();
-                    ListConcertsViewModel lvm = page.DataContext as ListConcertsViewModel;
-                    lvm.SelectedUser = SelectedUser;
-                    Switcher.Switch(page);
-                }
             });
         }
+
         private void ChangeSelectedUserInTopBar()
         {
             TopBarAfterLogInView view = new TopBarAfterLogInView();
