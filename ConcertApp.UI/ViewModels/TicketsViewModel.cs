@@ -19,6 +19,7 @@ namespace ConcertApp.UI.ViewModels
        
         ConcertService concertService;
 
+
         UserDTO user;
         public UserDTO CurrentUser 
         {

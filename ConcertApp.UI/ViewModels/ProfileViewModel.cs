@@ -39,7 +39,7 @@ namespace ConcertApp.UI.ViewModels
                 (view.DataContext as TicketsViewModel).CurrentUser = CurrentUser;
                 Switcher.Switch(view);
             });
-            GoBackCommand = new RelayCommand((param) => 
+            GoBackCommand = new RelayCommand((param) =>
             {
                 TopBarAfterLogInView view = new TopBarAfterLogInView();
                 (view.DataContext as TopBarAfterLogInViewModel).CurrentUser = CurrentUser;
@@ -49,11 +49,19 @@ namespace ConcertApp.UI.ViewModels
                 lvm.InitUser(CurrentUser.Id);
                 Switcher.Switch(page);
             });
+            AddCardCommand = new RelayCommand((param) => {
+
+                AddCreditCardView view = new AddCreditCardView();
+                (view.DataContext as AddCreditCardViewModel).CurrentUser = CurrentUser;
+                Switcher.Switch(view);
+            
+            });
         }
 
         public ICommand ExitCommand { get; private set; }
         public ICommand WatchingTickets { get; private set; }
 
         public ICommand GoBackCommand { get; private set; }
+        public ICommand AddCardCommand { get;private set; }
     }
 }

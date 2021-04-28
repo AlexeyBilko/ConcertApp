@@ -37,6 +37,6 @@ namespace ConcertApp.UI.Infrastructure
 
 
         public CreateTicketViewModel CreateTicketViewModel => kernel.Get<CreateTicketViewModel>();
-
+        public AddCreditCardViewModel AddCreditCardViewModel => kernel.Get<AddCreditCardViewModel>();
     }
 }

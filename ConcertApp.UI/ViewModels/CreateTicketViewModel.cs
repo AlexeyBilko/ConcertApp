@@ -114,6 +114,11 @@ namespace ConcertApp.UI.ViewModels
 
                         service.CreateOrUpdate(tmp);
                         list.Add(tmp);
+                        ChangeSelectedUserInTopBar();
+                        foreach(var item in list)
+                        {
+                            SelectedUser.Tickets.Add(item);
+                        }
                     }
 
                     MailAddress from = new MailAddress("concertapp.notificationmail@gmail.com");
@@ -158,6 +163,9 @@ namespace ConcertApp.UI.ViewModels
                 {
                     MessageBox.Show("Wrong count!");
                 }
+                
+            
+                
             });
 
             GoBackCommand = new RelayCommand((param) =>
@@ -168,10 +176,16 @@ namespace ConcertApp.UI.ViewModels
                 {
                     ListConcertsView page = new ListConcertsView();
                     ListConcertsViewModel lvm = page.DataContext as ListConcertsViewModel;
-                    lvm.InitUser(SelectedUser.Id);
+                    lvm.SelectedUser = SelectedUser;
                     Switcher.Switch(page);
                 }
             });
+        }
+        private void ChangeSelectedUserInTopBar()
+        {
+            TopBarAfterLogInView view = new TopBarAfterLogInView();
+            (view.DataContext as TopBarAfterLogInViewModel).CurrentUser = SelectedUser;
+            (Switcher.ContentArea as MainViewModel).CurrentTopPage = view;
         }
 
         public ICommand ConfirmCommand { get; private set; }

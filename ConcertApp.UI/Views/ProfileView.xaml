@@ -55,18 +55,27 @@
             </StackPanel>
         </Grid>
         <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
-            <Label Width="100"></Label>
             <Button  
                 Style="{StaticResource ButtonStyle1}" Width="120" 
                 Height="50" Command="{Binding WatchingTickets}"
                 FontFamily="Berlin Sans FB Demi" FontSize="20" 
-                Foreground="White" Background="DarkRed">My tickets</Button>
+                Foreground="White" Background="DarkRed"
+                Margin="15,0,0,0">My tickets</Button>
 
+            <Button  
+                Style="{StaticResource ButtonStyle1}" Width="120" 
+                Height="50" Margin="40,0,0,0" 
+                Command="{Binding AddCardCommand}"
+                FontFamily="Berlin Sans FB Demi" FontSize="20" Foreground="White" Background="DarkOrange">Add card</Button>
+            
             <Button  
                 Style="{StaticResource ButtonStyle1}" Width="120" 
                 Height="50" Margin="40,0,0,0" 
                 Command="{Binding ExitCommand}"
                 FontFamily="Berlin Sans FB Demi" FontSize="20" Foreground="White" Background="DodgerBlue">Exit</Button>
+
+            
+            
         </StackPanel>
 
         <Button Width="100" Foreground="Red" Grid.Column="0" Grid.Row="1" Background="White" BorderBrush="White" Height="60" FontSize="15" FontWeight="Bold"
