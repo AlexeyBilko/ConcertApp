@@ -41,8 +41,10 @@ namespace ConcertApp.UI.ViewModels
                 TopBarAfterLogInView view = new TopBarAfterLogInView();
                 (view.DataContext as TopBarAfterLogInViewModel).CurrentUser = CurrentUser;
                 (Switcher.ContentArea as MainViewModel).CurrentTopPage = view;
-                Switcher.Switch(new ListConcertsView());
-
+                ListConcertsView page = new ListConcertsView();
+                ListConcertsViewModel lvm = page.DataContext as ListConcertsViewModel;
+                lvm.InitUser(CurrentUser.Id);
+                Switcher.Switch(page);
             });
         }
 

@@ -21,7 +21,7 @@
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <Label FontFamily="Berlin Sans FB Demi" FontSize="19"  Grid.Row="1" Margin="316,35.6,-173,14" Grid.RowSpan="2">Email</Label>
-            <Label FontFamily="Berlin Sans FB Demi" FontSize="19"  Grid.Row="2" Margin="316,34.4,-173,-24">Password</Label>
+            <Label FontFamily="Berlin Sans FB Demi" FontSize="19"  Grid.Row="2" Margin="316,21.6,-173,-11.2">Password</Label>
 
             <TextBox FontSize="19"  Text="{Binding Email}" Grid.Row= "1" Height="32" Margin="477,34.6,302,0.6" Style="{DynamicResource TextBoxCornerRadius7}">
                 <TextBox.ToolTip>
@@ -31,26 +31,48 @@
                     </ToolTip>
                 </TextBox.ToolTip>
             </TextBox>
-            <TextBox Text="{Binding Password}" FontSize="19" Grid.Row= "2" Height="32"  Margin="477,34.4,302,0" Style="{DynamicResource TextBoxCornerRadius7}">
+            <Border Grid.Row="2" Height="32" BorderThickness="2" BorderBrush="Black" CornerRadius="10" Margin="477,20,302,11.8">
+                <PasswordBox BorderThickness="0" Background="Transparent" Height="32"
+                                 FontSize="17"
+                                 x:Name="PasswordBox"
+                                 />
+            </Border>
+            <!--<TextBox Text="{Binding Password}" FontSize="19" Grid.Row= "2" Height="32"  Margin="477,34.4,302,0" Style="{DynamicResource TextBoxCornerRadius7}">
                 <TextBox.ToolTip>
                     <ToolTip>
                         Enter your password
                     </ToolTip>
                 </TextBox.ToolTip>
-            </TextBox>
+            </TextBox>-->
             <Label FontFamily="Berlin Sans FB Demi" FontSize="19"  Grid.Row="2" Margin="521,141.6,-377,-131.2" Content="or"/>
         </Grid>
         <Grid Grid.Row="1">
-            <Button Command="{Binding LogInCommand}" Background="#FF2E00" Margin="281,40,540,40" Height="40" Style="{DynamicResource ButtonStyle1}">
-                <Label Foreground="#efefef" FontFamily="Berlin Sans FB Demi" FontSize="22">Log in</Label>
+            <Button Command="{Binding LogInCommand}"  CommandParameter="{Binding ElementName=PasswordBox}" 
+                    Background="#FF2E00" Margin="281,40,540,40" 
+                    Height="40" 
+                    Style="{DynamicResource ButtonStyle1}"
+                    Template="{StaticResource StandartButton}">
+                <Label HorizontalAlignment="Center" VerticalAlignment="Center"
+                       Foreground="#efefef" 
+                       FontFamily="Berlin Sans FB Demi"
+                       FontSize="22">Log in</Label>
                 <Button.ToolTip>
                     <ToolTip>
                         Log I
                     </ToolTip>
                 </Button.ToolTip>
             </Button>
-            <Button Command="{Binding RegistrationCommand}" Background="DarkOrange" Height="40" Margin="603,40,264,40" Style="{DynamicResource ButtonStyle1}">
-                <Label Foreground="#efefef" FontFamily="Berlin Sans FB Demi" FontSize="22">Register</Label>
+            <Button Command="{Binding RegistrationCommand}" Background="DarkOrange" Height="40" 
+                    Margin="603,40,264,40" Style="{DynamicResource ButtonStyle1}"
+                    Template="{StaticResource StandartButton}"
+                   
+                    >
+                <Label 
+                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                       Foreground="#efefef" 
+                       FontFamily="Berlin Sans FB Demi"
+                       FontSize="22"
+                       >Registration</Label>
                 <Button.ToolTip>
                     <ToolTip>
                         Log I

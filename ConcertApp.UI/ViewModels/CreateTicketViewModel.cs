@@ -1,6 +1,7 @@
 ﻿using ConcertApp.BLL.DTO;
 using ConcertApp.BLL.Services;
 using ConcertApp.UI.Infrastructure;
+using ConcertApp.UI.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -58,14 +59,14 @@ namespace ConcertApp.UI.ViewModels
             }
         }
 
-        private UserDTO selectedBankUser;
+        private UserDTO selectedUser;
 
-        public UserDTO SelectedBankUser
+        public UserDTO SelectedUser
         {
-            get => selectedBankUser;
+            get => selectedUser;
             set
             {
-                selectedBankUser = value;
+                selectedUser = value;
                 NotifyPropertyChanged();
             }
         }
@@ -78,7 +79,7 @@ namespace ConcertApp.UI.ViewModels
             {
                 TicketDTO tmp = new TicketDTO();
                 tmp.ConcertId = SelectedConcert.Id;
-                tmp.UserId = SelectedBankUser.Id;
+                tmp.UserId = SelectedUser.Id;
                 tmp.Row = this.Row;
                 tmp.Place = this.Place;
                 tmp.Type = this.TypeOfTicket;
@@ -91,8 +92,17 @@ namespace ConcertApp.UI.ViewModels
             
                 service.CreateOrUpdate(tmp);
             });
+
+            GoBackCommand = new RelayCommand((param) =>
+            {
+                ListConcertsView page = new ListConcertsView();
+                ListConcertsViewModel lvm = page.DataContext as ListConcertsViewModel;
+                lvm.InitUser(SelectedUser.Id);
+                Switcher.Switch(page);
+            });
         }
 
         public ICommand ConfirmCommand { get; private set; }
+        public ICommand GoBackCommand { get; private set; }
     }
 }

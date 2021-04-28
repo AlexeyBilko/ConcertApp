@@ -38,10 +38,12 @@ namespace ConcertApp.UI.ViewModels
         }
 
         public ConcertService ConcertService;
+        public UserService userService;
         
-        public ConcertDetailsViewModel(ConcertService cs)
+        public ConcertDetailsViewModel(ConcertService cs, UserService us)
         {
             ConcertService = cs;
+            userService = us;
             InitCommands();
         }
 
@@ -62,7 +64,7 @@ namespace ConcertApp.UI.ViewModels
                     CreateTicketView page = new CreateTicketView();
                     CreateTicketViewModel ctvm = page.DataContext as CreateTicketViewModel;
                     ctvm.SelectedConcert = SelectedEvent;
-                    ctvm.SelectedBankUser = SelectedUser;
+                    ctvm.SelectedUser = SelectedUser;
                     Switcher.Switch(page);
                 }
             });
@@ -72,7 +74,10 @@ namespace ConcertApp.UI.ViewModels
         {
             SelectedEvent = ConcertService.Get(id);
         }
-
+        public void InitUser(int userId)
+        {
+            SelectedUser = userService.Get(userId);
+        }
         public ICommand OrderCommand { get; private set; }
         public ICommand BackCommand { get; private set; }
     }

@@ -77,46 +77,67 @@
                 </Calendar>
             </Border>
 
-            <Label Background="White" Height="35"></Label>
-            
-            <Border BorderThickness="3" BorderBrush="Red" CornerRadius="15" Margin="5">
-                <Button BorderThickness="0"  FontSize="18"
-                    HorizontalAlignment="Center" FontWeight="DemiBold" 
-                    Foreground="Red" Background="White" BorderBrush="White" 
-                    Command="{Binding GetConcertsCommand}"
-                    >Concert</Button>
-            </Border>
-            <Border BorderThickness="3" BorderBrush="Red" CornerRadius="15" Margin="5">
 
-                <Button BorderThickness="0" 
-                FontSize="18" HorizontalAlignment="Center" 
-                FontWeight="DemiBold" Foreground="Red" 
-                Background="White" BorderBrush="White"
-                Command="{Binding GetTheatreCommand}">Theatre</Button>
-            </Border>
-            <Border BorderThickness="3" BorderBrush="Red" CornerRadius="15" Margin="5">
+            <Button 
+                        Margin="0,20,0,0"
+                        Template="{StaticResource ButtonBurn}"
+                        Foreground="White"
+                        FontFamily="Berlin Sans FB Demi"
+                        Background="Red"
+                         Width="120"
+                        FontSize="23"
+                        Command="{Binding GetConcertsCommand}"
+                        Content="Concert"
+                
+                    >
 
-                <Button BorderThickness="0"  FontSize="18" HorizontalAlignment="Center" 
-                    FontWeight="DemiBold"
-                    Foreground="Red" Background="White" 
-                    BorderBrush="White"
-                    Command="{Binding GetFestivalsCommand}">Festival</Button>
-            </Border>
-            <Border BorderThickness="3" BorderBrush="Red" CornerRadius="15" Margin="5">
+         
+            </Button>
 
-                <Button BorderThickness="0"  FontSize="18" HorizontalAlignment="Center" 
-                    FontWeight="DemiBold"
-                    Foreground="Red" Background="White" 
-                    BorderBrush="White"
-                    Command="{Binding GetHumorCommand}">Humor</Button>
-            </Border>
 
-            <Label Background="White" Height="20"></Label>
-            <Button BorderThickness="0"  FontSize="15" HorizontalAlignment="Center" 
-                    FontWeight="DemiBold"
-                    Foreground="Red" Background="White" 
-                    BorderBrush="White"
-                    Command="{Binding RefreshCommand}">Refresh</Button>
+            <Button 
+                FontSize="23" HorizontalAlignment="Center" 
+                Foreground="White" 
+                Width="120"
+                Margin="0,7,0,0"
+                Template="{StaticResource ButtonBurn}"
+                Background="Red"
+                FontFamily="Berlin Sans FB Demi"
+                Command="{Binding GetTheatreCommand}" Content="Theatre"></Button>
+
+
+            <Button   
+			    FontSize="23" HorizontalAlignment="Center" 
+                Foreground="White" 
+                Margin="0,7,0,0"
+                Template="{StaticResource ButtonBurn}"
+                Background="Red"
+                FontFamily="Berlin Sans FB Demi"
+                Width="120"
+                Command="{Binding GetFestivalsCommand}">Festival
+			</Button>
+
+
+            <Button FontSize="23" HorizontalAlignment="Center" 
+                Foreground="White" 
+                Margin="0,7,0,0"
+                Template="{StaticResource ButtonBurn}"
+                Background="Red"
+                FontFamily="Berlin Sans FB Demi"
+                Width="120"
+                Command="{Binding GetHumorCommand}">Humor</Button>
+
+
+
+
+            <Button FontSize="23" HorizontalAlignment="Center" 
+                Foreground="White" 
+                Margin="0,7,0,0"
+                Template="{StaticResource ButtonBurn}"
+                Background="Red"
+                FontFamily="Berlin Sans FB Demi"
+                Width="120"
+                Command="{Binding RefreshCommand}">Refresh</Button>
 
         </StackPanel>
     </Grid>
