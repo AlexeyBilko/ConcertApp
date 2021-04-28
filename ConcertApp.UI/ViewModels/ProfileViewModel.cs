@@ -28,7 +28,10 @@ namespace ConcertApp.UI.ViewModels
             ExitCommand = new RelayCommand((param) =>
             {
                 (Switcher.ContentArea as MainViewModel).CurrentTopPage = new TopBarView();
-                Switcher.Switch(new ListConcertsView());
+                ListConcertsView page = new ListConcertsView();
+                ListConcertsViewModel vm = page.DataContext as ListConcertsViewModel;
+                vm.InitUser(CurrentUser.Id);
+                Switcher.Switch(page);
             });
             WatchingTickets = new RelayCommand((param) =>
             {
