@@ -32,16 +32,18 @@ namespace ConcertApp.UI.ViewModels
             }
         }
 
+        CreditCardService CreditCardService;
 
-        public TicketsViewModel(ConcertService service)
+        public TicketsViewModel(ConcertService service, CreditCardService cs)
         {
             Concerts = new ObservableCollection<ConcertDTO>();
             concertService = service;
-
+            CreditCardService = cs;
             GoBackCommand = new RelayCommand((param) =>
             {
                 ProfileView view = new ProfileView();
                 (view.DataContext as ProfileViewModel).CurrentUser = CurrentUser;
+                (view.DataContext as ProfileViewModel).CreditCard = CreditCardService.Get((int)CurrentUser.CardId);
                 Switcher.Switch(view);
             });
         }

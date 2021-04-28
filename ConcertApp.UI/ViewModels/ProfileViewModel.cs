@@ -42,7 +42,6 @@ namespace ConcertApp.UI.ViewModels
                 (Switcher.ContentArea as MainViewModel).CurrentTopPage = new TopBarView();
                 ListConcertsView page = new ListConcertsView();
                 ListConcertsViewModel vm = page.DataContext as ListConcertsViewModel;
-                vm.InitUser(CurrentUser.Id);
                 Switcher.Switch(page);
             });
             WatchingTickets = new RelayCommand((param) =>

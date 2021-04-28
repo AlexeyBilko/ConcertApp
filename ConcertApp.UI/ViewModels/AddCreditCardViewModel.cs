@@ -25,6 +25,7 @@ namespace ConcertApp.UI.ViewModels
             }
         }
         CreditCardService cardService;
+        UserService userService;
 
         CreditCardDTO card;
         public CreditCardDTO Card
@@ -37,15 +38,20 @@ namespace ConcertApp.UI.ViewModels
             }
 
         }
-        public AddCreditCardViewModel(CreditCardService cardService)
+
+
+
+        public AddCreditCardViewModel(CreditCardService cardService, UserService us)
         {
             this.cardService = cardService;
+            userService = us;
             Card = new CreditCardDTO();
-            Card.ExpireDate = DateTime.Now;
+            Card.ExpireDate = new DateTime(2022, 01, 01);
             AddCardCommand = new RelayCommand((param) =>
             {
                 cardService.CreateOrUpdate(Card);
-                CurrentUser.CardId = Card.Id;
+                CurrentUser.CardId = cardService.GetAll().Last().Id;
+                userService.CreateOrUpdate(CurrentUser);
                 GoBack(new object());
             });
             GoBackCommand = new RelayCommand(GoBack);
@@ -55,6 +61,7 @@ namespace ConcertApp.UI.ViewModels
         {
             ProfileView view = new ProfileView();
             (view.DataContext as ProfileViewModel).CurrentUser = CurrentUser;
+            (view.DataContext as ProfileViewModel).CreditCard = cardService.Get((int)CurrentUser.CardId); ;
             Switcher.Switch(view);
         }
 
