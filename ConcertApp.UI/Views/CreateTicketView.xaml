@@ -87,6 +87,10 @@
                     <ComboBoxItem>10</ComboBoxItem>
                 </ComboBox>
             </DockPanel>
+            <DockPanel>
+                <Label Width="70" Margin="50,0,0,0" FontSize="14">Count</Label>
+                <TextBox Text="{Binding Count}" Style="{DynamicResource TextBoxCornerRadius7}" Width="150" Height="25"></TextBox>
+            </DockPanel>
             <Label Height="25"></Label>
             <Label Height="20"></Label>
             <Button Style="{DynamicResource ButtonStyle1}" Command="{Binding ConfirmCommand}" Width="150" Height="30" Background="OrangeRed" Foreground="White" FontWeight="Bold">Confirm</Button>

@@ -128,7 +128,9 @@
                 Command="{Binding GetHumorCommand}">Humor</Button>
 
 
-
+            <Label Height="30">
+                
+            </Label>
 
             <Button FontSize="23" HorizontalAlignment="Center" 
                 Foreground="White" 
