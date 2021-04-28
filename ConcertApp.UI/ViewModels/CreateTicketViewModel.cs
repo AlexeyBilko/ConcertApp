@@ -95,10 +95,15 @@ namespace ConcertApp.UI.ViewModels
 
             GoBackCommand = new RelayCommand((param) =>
             {
-                ListConcertsView page = new ListConcertsView();
-                ListConcertsViewModel lvm = page.DataContext as ListConcertsViewModel;
-                lvm.InitUser(SelectedUser.Id);
-                Switcher.Switch(page);
+                if (SelectedUser == null)
+                    Switcher.Switch(new ListConcertsView());
+                else
+                {
+                    ListConcertsView page = new ListConcertsView();
+                    ListConcertsViewModel lvm = page.DataContext as ListConcertsViewModel;
+                    lvm.InitUser(SelectedUser.Id);
+                    Switcher.Switch(page);
+                }
             });
         }
 

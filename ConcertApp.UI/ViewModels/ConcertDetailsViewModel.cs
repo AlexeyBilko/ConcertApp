@@ -51,7 +51,15 @@ namespace ConcertApp.UI.ViewModels
         {
             BackCommand = new RelayCommand((param) =>
             {
-                Switcher.Switch(new ListConcertsView());
+                if(SelectedUser == null)
+                    Switcher.Switch(new ListConcertsView());
+                else
+                {
+                    ListConcertsView page = new ListConcertsView();
+                    ListConcertsViewModel vm = page.DataContext as ListConcertsViewModel;
+                    vm.InitUser(SelectedUser.Id);
+                    Switcher.Switch(page);
+                }
             });
             OrderCommand = new RelayCommand((x) =>
             {
