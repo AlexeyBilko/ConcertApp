@@ -77,6 +77,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Infrastructure\ViewModelLocator.cs" />
+    <Compile Include="ViewModels\AddCreditCardViewModel.cs" />
     <Compile Include="ViewModels\ConcertDetailsViewModel.cs" />
     <Compile Include="ViewModels\CreateTicketViewModel.cs" />
     <Compile Include="ViewModels\ListConcertsViewModel.cs" />
@@ -91,6 +92,9 @@
     <Compile Include="ViewModels\TicketsViewModel.cs" />
     <Compile Include="ViewModels\TopBarAfterLogInViewModel.cs" />
     <Compile Include="ViewModels\TopBarViewModel.cs" />
+    <Compile Include="Views\AddCreditCardView.xaml.cs">
+      <DependentUpon>AddCreditCardView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CreateTicketView.xaml.cs">
       <DependentUpon>CreateTicketView.xaml</DependentUpon>
     </Compile>
@@ -163,6 +167,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\AddCreditCardView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CreateTicketView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
