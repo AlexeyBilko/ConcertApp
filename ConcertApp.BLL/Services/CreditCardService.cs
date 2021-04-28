@@ -39,6 +39,7 @@ namespace ConcertApp.BLL.Services
             return mapper.Map<IEnumerable<CreditCards>, IEnumerable<CreditCardDTO>>(cardRepository.GetAll());
         }
 
+
         public CreditCardDTO Delete(CreditCardDTO cardDTO)
         {
             CreditCards cardToRemove = cardRepository.Get(cardDTO.Id);

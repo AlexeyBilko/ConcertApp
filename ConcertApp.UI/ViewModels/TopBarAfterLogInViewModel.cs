@@ -14,6 +14,8 @@ namespace ConcertApp.UI.ViewModels
 {
     public class TopBarAfterLogInViewModel: BaseNotifyPropertyChanged
     {
+        CreditCardService serviceCC;
+
         private string search;
         public string Search
         {
@@ -28,9 +30,10 @@ namespace ConcertApp.UI.ViewModels
 
         public UserDTO CurrentUser { get; set; }
 
-        public TopBarAfterLogInViewModel(ConcertService service)
+        public TopBarAfterLogInViewModel(ConcertService service, CreditCardService serviceC)
         {
             concertService = service;
+            serviceCC = serviceC;
             InitCommands();
         }
 
@@ -40,6 +43,14 @@ namespace ConcertApp.UI.ViewModels
 
                 ProfileView view = new ProfileView();
                 (view.DataContext as ProfileViewModel).CurrentUser = CurrentUser;
+                try
+                {
+                    (view.DataContext as ProfileViewModel).CreditCard = serviceCC.Get((int)CurrentUser.CardId);
+                }
+                catch (Exception e)
+                {
+
+                }
                 Switcher.Switch(view);
             });
 

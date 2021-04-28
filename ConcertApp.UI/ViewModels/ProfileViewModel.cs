@@ -1,4 +1,5 @@
 ﻿using ConcertApp.BLL.DTO;
+using ConcertApp.BLL.Services;
 using ConcertApp.UI.Infrastructure;
 using ConcertApp.UI.Views;
 using System;
@@ -19,6 +20,17 @@ namespace ConcertApp.UI.ViewModels
             set
             {
                 user = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        CreditCardDTO card;
+        public CreditCardDTO CreditCard
+        {
+            get => card;
+            set
+            {
+                card = value;
                 NotifyPropertyChanged();
             }
         }
