@@ -29,7 +29,7 @@
                 </TextBox.ToolTip>
             </TextBox>
 
-            <Button Width="40" Height="40" Margin="10,0,0,0" BorderBrush="White" Background="White" Command="{Binding SearchCommand}">
+            <Button  Style="{DynamicResource ButtonStyle2}"  Width="40" Height="40" Margin="10,0,0,0" BorderBrush="White" Background="White" Command="{Binding SearchCommand}">
                 <Ellipse Width="35" Height="35">
                     <Ellipse.Fill>
                         <ImageBrush ImageSource="https://png.pngtree.com/png-clipart/20190924/original/pngtree-vector-search-icon-png-image_4869926.jpg" Stretch="UniformToFill"></ImageBrush>
