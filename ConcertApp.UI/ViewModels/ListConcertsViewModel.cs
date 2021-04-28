@@ -150,6 +150,8 @@ namespace ConcertApp.UI.ViewModels
             Concerts = new ObservableCollection<ConcertDTO>(
                 concertService.GetAll().Where((concert) =>
                 {
+                    if (concert.StartTime == null)
+                        concert.StartTime = DateTime.Now;
                     return concert.StartTime.Value.Date == Date.Date;
                 })
             );
