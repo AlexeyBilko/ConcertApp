@@ -48,10 +48,14 @@ namespace ConcertApp.Admin.ViewModels
             {
                 if (CurrentPage.DataContext is ListEventViewModel vm)
                 {
-                    CreateEventView page = new CreateEventView();
-                    CreateEventViewModel cevm = page.DataContext as CreateEventViewModel;
-                    cevm.SetConcertToEdit(vm.SelectedConcert.Id);
-                    Switcher.Switch(page);
+                    try
+                    {
+                        CreateEventView page = new CreateEventView();
+                        CreateEventViewModel cevm = page.DataContext as CreateEventViewModel;
+                        cevm.SetConcertToEdit(vm.SelectedConcert.Id);
+                        Switcher.Switch(page);
+                    }
+                    catch{ }
                 }
             });
             RemoveConcertCommand = new RelayCommand((x) =>

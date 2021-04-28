@@ -38,8 +38,12 @@
                 <TextBox Width="200" Text="{Binding SelectedConcert.TypeOfEvent}"></TextBox>
             </DockPanel>
             <DockPanel>
-                <Label Width="100">StartTime</Label>
-                <TextBox Width="200" Text="{Binding SelectedConcert.StartTime}"></TextBox>
+                <Label Width="100">Date:</Label>
+                <DatePicker SelectedDate="{Binding Date}"></DatePicker>
+            </DockPanel>
+            <DockPanel>
+                <Label Width="100">StartTime:</Label>
+                <TextBox Text="{Binding Time}"></TextBox>
             </DockPanel>
             <DockPanel Height="20"></DockPanel>
             <Border BorderBrush="Red" Width="200" BorderThickness="5" Margin="5">

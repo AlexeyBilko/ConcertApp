@@ -22,6 +22,29 @@ namespace ConcertApp.Admin.ViewModels
             set
             {
                 selectedConcert = value;
+                SetTimeAndDateSettings();
+                NotifyPropertyChanged();
+            }
+        }
+        DateTime date;
+        public DateTime Date 
+        { 
+            get=>date; 
+            set
+            {
+                date = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        string time;
+        public string Time 
+        { 
+            get=>time; 
+            
+            set
+            {
+                time = value;
                 NotifyPropertyChanged();
             }
         }
@@ -30,12 +53,30 @@ namespace ConcertApp.Admin.ViewModels
         {
             service = serviceC;
             SelectedConcert = new ConcertDTO();
-
+            Date = DateTime.Now;
+            Time = DateTime.Now.ToLocalTime().ToString("HH:mm");
             AddConcertCommand = new RelayCommand(param =>
             {
-                service.CreateOrUpdate(SelectedConcert);
+                try
+                {
+                    string[] timeFormat = Time.Split(new char[] { ':' }, StringSplitOptions.RemoveEmptyEntries);
+                    int horse = Convert.ToInt32(timeFormat[0]);
+                    int minutes = Convert.ToInt32(timeFormat[1]);
+                    SelectedConcert.StartTime = new DateTime(Date.Year, Date.Month, Date.Day, horse, minutes, 0);
+                    service.CreateOrUpdate(SelectedConcert);
+                }
+                catch { }
                 Switcher.Switch(new ListEventView());
             });
+        }
+        private void SetTimeAndDateSettings()
+        {
+            if(SelectedConcert.StartTime!=null)
+            {
+                DateTime dateTime = (DateTime)SelectedConcert.StartTime;
+                Time = dateTime.ToString("HH:mm");
+                Date = dateTime;
+            }
         }
 
         public ICommand AddConcertCommand { get; private set; }
