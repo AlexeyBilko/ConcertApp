@@ -45,7 +45,7 @@ namespace ConcertApp.UI.ViewModels
             AddCardCommand = new RelayCommand((param) =>
             {
                 cardService.CreateOrUpdate(Card);
-                
+                CurrentUser.CardId = Card.Id;
                 GoBack(new object());
             });
             GoBackCommand = new RelayCommand(GoBack);

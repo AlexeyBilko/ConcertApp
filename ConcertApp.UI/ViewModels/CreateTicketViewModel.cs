@@ -93,78 +93,90 @@ namespace ConcertApp.UI.ViewModels
 
             ConfirmCommand = new RelayCommand(x =>
             {
-
-                try
+                if (SelectedUser != null)
                 {
-                    List<TicketDTO> list = new List<TicketDTO>();
-                    for (int i = 0; i < Count; i++)
+                    if (SelectedUser.CardId == null)
                     {
-                        TicketDTO tmp = new TicketDTO();
-                        tmp.ConcertId = SelectedConcert.Id;
-                        tmp.UserId = SelectedUser.Id;
-                        tmp.Row = this.Row;
-                        tmp.Place = this.Place;
-                        tmp.Type = this.TypeOfTicket;
-                        if (tmp.Type == "VIP")
-                        {
-                            tmp.Price = 1000;
-                        }
-                        else
-                            tmp.Price = 600;
-
-                        service.CreateOrUpdate(tmp);
-                        list.Add(tmp);
-                        ChangeSelectedUserInTopBar();
-                        foreach(var item in list)
-                        {
-                            SelectedUser.Tickets.Add(item);
-                        }
+                        MessageBox.Show("You didn't added credit card in your profile");
+                        AddCreditCardView page = new AddCreditCardView();
+                        AddCreditCardViewModel vm = page.DataContext as AddCreditCardViewModel;
+                        vm.CurrentUser = SelectedUser;
+                        Switcher.Switch(page);
                     }
-
-                    MailAddress from = new MailAddress("concertapp.notificationmail@gmail.com");
-
-                    MailAddress to = new MailAddress(SelectedUser.Email);
-
-                    using (MailMessage m = new MailMessage(from, to))
+                    else
                     {
-                        using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
+                        try
                         {
+                            List<TicketDTO> list = new List<TicketDTO>();
                             for (int i = 0; i < Count; i++)
                             {
-                                string path = $"{SelectedUser.Email}ticket{i + 1}.txt";
-                                File.WriteAllText(path, "");
-                                List<string> info = new List<string>();
-                                info.Add($"Event: {SelectedConcert.Title}");
-                                info.Add($"City: {SelectedConcert.City}");
-                                info.Add($"Adress: {SelectedConcert.Address}");
-                                info.Add($"Row: {list[i].Row}");
-                                info.Add($"Place: {list[i].Place}\n");
-                                info.Add($"Price: {list[i].Price}");
-                                Random rand = new Random();
-                                int code = rand.Next(100000, 999999);
-                                info.Add($"Special code: {code.ToString()}");
-                                File.AppendAllLines(path, info);
-                                m.Attachments.Add(new Attachment(path));
+                                TicketDTO tmp = new TicketDTO();
+                                tmp.ConcertId = SelectedConcert.Id;
+                                tmp.UserId = SelectedUser.Id;
+                                tmp.Row = this.Row;
+                                tmp.Place = this.Place;
+                                tmp.Type = this.TypeOfTicket;
+                                if (tmp.Type == "VIP")
+                                {
+                                    tmp.Price = 1000;
+                                }
+                                else
+                                    tmp.Price = 600;
+
+                                service.CreateOrUpdate(tmp);
+                                list.Add(tmp);
+                                ChangeSelectedUserInTopBar();
+                                foreach (var item in list)
+                                {
+                                    SelectedUser.Tickets.Add(item);
+                                }
                             }
 
-                            smtp.Credentials = new NetworkCredential("concertapp.notificationmail@gmail.com", "notificationmail");
-                            smtp.EnableSsl = true;
-                            try
+                            MailAddress from = new MailAddress("concertapp.notificationmail@gmail.com");
+
+                            MailAddress to = new MailAddress(SelectedUser.Email);
+
+                            using (MailMessage m = new MailMessage(from, to))
                             {
-                                smtp.Send(m);
+                                using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
+                                {
+                                    for (int i = 0; i < Count; i++)
+                                    {
+                                        string path = $"{SelectedUser.Email}ticket{i + 1}.txt";
+                                        File.WriteAllText(path, "");
+                                        List<string> info = new List<string>();
+                                        info.Add($"Event: {SelectedConcert.Title}");
+                                        info.Add($"City: {SelectedConcert.City}");
+                                        info.Add($"Adress: {SelectedConcert.Address}");
+                                        info.Add($"Row: {list[i].Row}");
+                                        info.Add($"Place: {list[i].Place}\n");
+                                        info.Add($"Price: {list[i].Price}");
+                                        Random rand = new Random();
+                                        int code = rand.Next(100000, 999999);
+                                        info.Add($"Special code: {code.ToString()}");
+                                        File.AppendAllLines(path, info);
+                                        m.Attachments.Add(new Attachment(path));
+                                    }
+
+                                    smtp.Credentials = new NetworkCredential("concertapp.notificationmail@gmail.com", "notificationmail");
+                                    smtp.EnableSsl = true;
+                                    try
+                                    {
+                                        smtp.Send(m);
+                                    }
+                                    catch { }
+                                }
                             }
-                            catch { }
+
+                            MessageBox.Show("Successfully! Check your email for ticket doc.");
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Wrong count!");
                         }
                     }
-
-                    MessageBox.Show("Successfully! Check your email for ticket doc.");
                 }
-                catch (Exception)
-                {
-                    MessageBox.Show("Wrong count!");
-                }
-                
-            
+                else Switcher.Switch(new LogInAppView());
                 
             });
 
