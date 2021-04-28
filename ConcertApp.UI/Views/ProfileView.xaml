@@ -40,6 +40,8 @@
                         <TextBlock FontSize="21" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" HorizontalAlignment="Left">Your number phone:</TextBlock>
                         <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" HorizontalAlignment="Left">Your password:</TextBlock>
                         <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" HorizontalAlignment="Left">Quantity tickets:</TextBlock>
+                        <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" HorizontalAlignment="Left">CreditCard Number:</TextBlock>
+                        <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" HorizontalAlignment="Left">CVV2:</TextBlock>
                     </StackPanel>
 
                     <StackPanel Grid.Column="1">
@@ -49,6 +51,8 @@
                         <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" Text="{Binding CurrentUser.NumberPhone}" HorizontalAlignment="Left"></TextBlock>
                         <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" Text="{Binding CurrentUser.Password}" HorizontalAlignment="Left"></TextBlock>
                         <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" Text="{Binding CurrentUser.Tickets.Count}" HorizontalAlignment="Left"></TextBlock>
+                        <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" Text="{Binding CreditCard.Number}" HorizontalAlignment="Left"></TextBlock>
+                        <TextBlock FontSize="22" FontFamily="Berlin Sans FB Demi" Margin="0,6,0,0" Text="{Binding CreditCard.Cvv2}" HorizontalAlignment="Left"></TextBlock>
                     </StackPanel>
                 </Grid>
                 
